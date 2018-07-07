@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTT", "TTT\TTT.csproj", "{8A3DC02F-7A33-4A5F-9E07-F9E09536089F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HPYL_API", "TTT\HPYL_API.csproj", "{8A3DC02F-7A33-4A5F-9E07-F9E09536089F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
