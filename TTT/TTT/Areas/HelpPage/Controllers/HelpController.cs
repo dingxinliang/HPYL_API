@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using TTT.Areas.HelpPage.ModelDescriptions;
-using TTT.Areas.HelpPage.Models;
+using  HPYL_API.Areas.HelpPage.ModelDescriptions;
+using  HPYL_API.Areas.HelpPage.Models;
 
-namespace TTT.Areas.HelpPage.Controllers
+namespace  HPYL_API.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

@@ -1,6 +1,6 @@
 using System;
 
-namespace TTT.Areas.HelpPage.ModelDescriptions
+namespace  HPYL_API.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Net.Http.Headers;
 using System.Web.Http.Description;
-using TTT.Areas.HelpPage.ModelDescriptions;
+using  HPYL_API.Areas.HelpPage.ModelDescriptions;
 
-namespace TTT.Areas.HelpPage.Models
+namespace  HPYL_API.Areas.HelpPage.Models
 {
     /// <summary>
     /// The model that represents an API displayed on the help page.

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TTT
+namespace HPYL_API
 {
     public class BundleConfig
     {

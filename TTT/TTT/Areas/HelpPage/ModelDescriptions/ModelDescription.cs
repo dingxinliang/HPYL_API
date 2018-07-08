@@ -1,6 +1,6 @@
 using System;
 
-namespace TTT.Areas.HelpPage.ModelDescriptions
+namespace  HPYL_API.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

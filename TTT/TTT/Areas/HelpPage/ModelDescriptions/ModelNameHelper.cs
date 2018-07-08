@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace TTT.Areas.HelpPage.ModelDescriptions
+namespace  HPYL_API.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace TTT.Areas.HelpPage.ModelDescriptions
+namespace  HPYL_API.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

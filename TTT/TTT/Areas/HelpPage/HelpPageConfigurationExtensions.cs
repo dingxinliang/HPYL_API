@@ -11,10 +11,11 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using TTT.Areas.HelpPage.ModelDescriptions;
-using TTT.Areas.HelpPage.Models;
+using XL.Util;
+using  HPYL_API.Areas.HelpPage.ModelDescriptions;
+using  HPYL_API.Areas.HelpPage.Models;
 
-namespace TTT.Areas.HelpPage
+namespace  HPYL_API.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {
@@ -254,6 +255,8 @@ namespace TTT.Areas.HelpPage
         private static void GenerateUriParameters(HelpPageApiModel apiModel, ModelDescriptionGenerator modelGenerator)
         {
             ApiDescription apiDescription = apiModel.ApiDescription;
+            int count =1;
+            int pcount = apiDescription.ParameterDescriptions.Count;
             foreach (ApiParameterDescription apiParameter in apiDescription.ParameterDescriptions)
             {
                 if (apiParameter.Source == ApiParameterSource.FromUri)
@@ -294,8 +297,16 @@ namespace TTT.Areas.HelpPage
                     {
                         foreach (ParameterDescription uriParameter in complexTypeDescription.Properties)
                         {
+                            
                             apiModel.UriParameters.Add(uriParameter);
                         }
+                        //complexTypeDescription
+                        ////自定义签名 时间戳
+                        //foreach (var item in collection)
+                        //{
+
+                        //}
+                        //uriParameter
                     }
                     else if (parameterDescriptor != null)
                     {
@@ -312,6 +323,21 @@ namespace TTT.Areas.HelpPage
                         {
                             uriParameter.Annotations.Add(new ParameterAnnotation() { Documentation = "Default value is " + Convert.ToString(defaultValue, CultureInfo.InvariantCulture) });
                         }
+
+                        if (count == pcount)
+                        {
+                            string[] Name ={ "Sign", "Ts" };
+                            string[] desc = { "签名", "时间戳" };
+                            for (int i = 0; i < Name.Length; i++)
+                            {
+                                apiParameter.Name = Name[i];
+                                apiParameter.Documentation = desc[i];
+                                ModelDescription modelDescription = modelGenerator.GetOrCreateModelDescription(typeof(string));
+                                uriParameter = AddParameterDescription(apiModel, apiParameter, modelDescription);
+                                uriParameter.Annotations.Add(new ParameterAnnotation() { Documentation = "Required" });
+                            }
+
+                        }
                     }
                     else
                     {
@@ -324,7 +350,10 @@ namespace TTT.Areas.HelpPage
                         AddParameterDescription(apiModel, apiParameter, modelDescription);
                     }
                 }
+                count++;
             }
+
+            // HPYL_API.Areas.HelpPage.ModelDescriptions.SimpleTypeModelDescription
         }
 
         private static bool IsBindableWithTypeConverter(Type parameterType)

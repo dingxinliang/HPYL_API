@@ -1,0 +1,49 @@
+﻿ 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+  
+</head>
+
+<body>
+    <div>
+
+      
+        API地址： <input id="txtAPI" type="text" style="width:500px" value="/api/TestA/SaveInfo" /><br /><br />
+        <form>
+
+            <input id="txtdata" type="text" value=" @ViewBag.json"  width="100px" height="100px"/>
+            <div id="dpar">
+            </div>
+            <input id="Button1" type="button" value="测试" />
+        </form>
+        <br />
+        <br />
+
+    </div>
+</body>
+<script>
+  
+    $("#Button1").click(function () {
+        var APIURL = $("#txtAPI").val();
+        $.ajax({
+            type: "Post",
+            url: APIURL,
+            data: $("#txtdata").val(),
+            contentType: 'application/json',
+            dataType: "text",
+            success: function (re) {
+                alert(re);
+            }
+        });
+
+    });
+
+
+</script>
+</html>
