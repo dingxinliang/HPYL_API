@@ -48,10 +48,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\DLL\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\DLL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -124,19 +130,19 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="XL.Application.Code">
-      <HintPath>..\..\..\..\..\串车宝\DXL\XL.WebAPI\XL.WebAPI\bin\XL.Application.Code.dll</HintPath>
+      <HintPath>..\..\DLL\XL.Application.Code.dll</HintPath>
     </Reference>
     <Reference Include="XL.Model">
-      <HintPath>..\..\..\..\..\串车宝\DXL\XL.WebAPI\XL.WebAPI\bin\XL.Model.dll</HintPath>
+      <HintPath>..\..\DLL\XL.Model.dll</HintPath>
     </Reference>
     <Reference Include="XL.Util">
-      <HintPath>..\..\..\..\..\串车宝\DXL\XL.WebAPI\XL.WebAPI\bin\XL.Util.dll</HintPath>
+      <HintPath>..\..\DLL\XL.Util.dll</HintPath>
     </Reference>
     <Reference Include="XL.Util.Extension">
-      <HintPath>..\..\..\..\..\串车宝\DXL\XL.WebAPI\XL.WebAPI\bin\XL.Util.Extension.dll</HintPath>
+      <HintPath>..\..\DLL\XL.Util.Extension.dll</HintPath>
     </Reference>
     <Reference Include="XL.Util.Log">
-      <HintPath>..\..\..\..\..\串车宝\DXL\XL.WebAPI\XL.WebAPI\bin\XL.Util.Log.dll</HintPath>
+      <HintPath>..\..\DLL\XL.Util.Log.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

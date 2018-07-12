@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HPYL.BLL
 {
-    class Class2
+   public class Class2
     {
     }
 }
