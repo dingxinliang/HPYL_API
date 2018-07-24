@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HPYL.Model</name>
+    </assembly>
+    <members>
+        <member name="T:HPYL.Model.AdviceArticle">
+            <summary>
+            医嘱文章
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.AdviceArticle.HAA_ID">
+            <summary>
+            标识列
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.AdviceArticle.HFT_ID">
+            <summary>
+            诊所项目类ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.AdviceArticle.HAA_Title">
+            <summary>
+            文章标题
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.AdviceArticle.HAA_PicUrl">
+            <summary>
+            文章封面
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.AdviceArticle.HAA_Content">
+            <summary>
+            文章内容
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.AdviceArticle.HAA_State">
+            <summary>
+            启用状态
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowContent.HDC_ID">
+            <summary>
+            标识列
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowContent.HAA_ID">
+            <summary>
+            文章ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowContent.HDC_Days">
+            <summary>
+            随访天数
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowContent.HDC_StratTime">
+            <summary>
+            开始随访时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowContent.HDC_Content">
+            <summary>
+            随访内容
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDoctorFollowPlan.HAA_ID">
+            <summary>
+            模板ID （必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDoctorFollowPlan.HDP_UserId">
+            <summary>
+            创建人ID(当前登录人的ID)（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDoctorFollowPlan.HDP_Remind">
+            <summary>
+            提醒方式（0 患者 1 自己 2 全部）（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDoctorFollowPlan.HDP_DoctorId">
+            <summary>
+            随访医生ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDoctorFollowPlan.HDP_PatientId">
+            <summary>
+            患者ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowPlan.HDP_ID">
+            <summary>
+            标识列
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowPlan.HDP_CreateTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowPlan.HDP_Content">
+            <summary>
+            随访内容
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DoctorFollowPlan.HDP_State">
+            <summary>
+            随访状态,不需要传递
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowPlan.HTP_ID">
+            <summary>
+            模板ID （必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowPlan.HFP_Name">
+            <summary>
+            随方名称（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowPlan.HFP_UserId">
+            <summary>
+            创建人ID(当前登录人的ID)（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowPlan.HFP_Remind">
+            <summary>
+            提醒方式（0 患者 1 自己 2 全部）（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowPlan.HFP_DoctorId">
+            <summary>
+            随访医生ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowPlan.HFP_PatientId">
+            <summary>
+            患者ID（必填）
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.FollowPlan">
+            <summary>
+            随访计划
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlan.HFP_ID">
+            <summary>
+            标识（删除更新时必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlan.HFP_CreateTime">
+            <summary>
+            开始时间 格式如：2018-01-27（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlan.HFP_Content">
+             <summary>
+            随访内容（必填）
+             </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlan.HFP_State">
+            <summary>
+            随访状态，不需要传递
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.MyPlanListDate">
+            <summary>
+            我的随访计划计划 时间列表
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.ReadFollowPlanContent">
+            <summary>
+            随访计划内容新增返回结果
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ReadFollowPlanContent.HTP_StartDate">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ReadFollowPlanContent.PlanContentList">
+            <summary>
+            模板内容
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.FollowPlanContent">
+            <summary>
+            随访计划内容
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlanContent.HFC_ID">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlanContent.HFC_Days">
+            <summary>
+            随访时间（天）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlanContent.HFC_StartTime">
+            <summary>
+            提醒时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlanContent.HFC_Content">
+            <summary>
+            随访内容
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BaseFollowTemPlate">
+            <summary>
+            APP随访计划模板表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowTemPlate.HTP_ID">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowTemPlate.HFT_ID">
+            <summary>
+            诊疗项目ID 
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowTemPlate.HTP_Name">
+            <summary>
+            随方名称
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.FollowTemPlate">
+            <summary>
+            随访计划模板表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowTemPlate.HTP_State">
+            <summary>
+            启用状态（0 未启用 1 启用）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowTemPlate.HTP_CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowTemPlate.HTP_UserId">
+            <summary>
+            创建用户ID
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BaseFollowType">
+            <summary>
+            诊疗科目
+            </summary>
+            
+        </member>
+        <member name="P:HPYL.Model.BaseFollowType.HFT_ID">
+            <summary>
+            类别ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseFollowType.HFT_Name">
+            <summary>
+            类别名称
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.GetFollowType">
+            <summary>
+            一级分类
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.SecondList">
+            <summary>
+            二级分类
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.FollowType">
+            <summary>
+            诊疗科目
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_ID">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_ShopId">
+            <summary>
+            诊所Id（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_ParentId">
+            <summary>
+            父类ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_Name">
+            <summary>
+            项目名称（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_UserId">
+            <summary>
+            创建人Id（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_CreateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_State">
+            <summary>
+            启用状态(0 未启用 1启用)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowType.HFT_Layer">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="M:HPYL.Model.FollowType.Create">
+            <summary>
+            初始化数据
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.MysqlTest">
+            <summary>
+            utest:实体类(属性说明自动提取数据库字段的描述信息)
+            </summary>
+        </member>
+        <!-- 对于成员“P:HPYL.Model.MysqlTest.Id”忽略有格式错误的 XML 注释 -->
+        <member name="P:HPYL.Model.MysqlTest.Name">
+            <summary>
+            
+            </summary>
+            
+        </member>
+        <member name="P:HPYL.Model.MysqlTest.Sex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.InfoToUser">
+            <summary>
+            用户信息操作类 如查询 删除
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.InfoToUser.UserID">
+            <summary>
+            当前登录用户(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.InfoToUser.KeyId">
+            <summary>
+            操作信息标识(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseQuickReply.HQR_Content">
+            <summary>
+            快捷回复内容(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseQuickReply.HQR_UserId">
+            <summary>
+            创建者(必填)
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.QuickReply">
+            <summary>
+            快捷回复
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.QuickReply.HQR_ID">
+            <summary>
+            标识列 (必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.QuickReply.HQR_Time">
+            <summary>
+            创建时间 非必填
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BaseReferrallog">
+            <summary>
+            转诊基础类
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseReferrallog.HRL_PatientId">
+            <summary>
+            患者ID(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseReferrallog.HRL_Info">
+            <summary>
+            患者主诉信息 (必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseReferrallog.HRL_DoctorId">
+            <summary>
+            接诊医生(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseReferrallog.HRL_Commission">
+            <summary>
+            分成比例(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseReferrallog.HRL_UserID">
+            <summary>
+            当前登录医生ID(必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseReferrallog.HRL_Remark">
+            <summary>
+            给医生的备注 (非必填)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Referrallog.HRL_ID">
+            <summary>
+            标识列
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Referrallog.HRL_State">
+            <summary>
+            转诊状态(0 待接诊 1 已接诊 2 已完诊)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Referrallog.HRL_CreateTime">
+            <summary>
+            转诊时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Referrallog.HRL_ReceiveTime">
+            <summary>
+            接诊时间
+            </summary>
+        </member>
+    </members>
+</doc>

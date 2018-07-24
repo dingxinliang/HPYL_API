@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\HPYL.Model.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,8 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoctorAdvice\AdviceArticle.cs" />
+    <Compile Include="DoctorAdvice\DoctorFollowContent.cs" />
+    <Compile Include="DoctorAdvice\DoctorFollowPlan.cs" />
+    <Compile Include="FollowPlan\FollowPlan.cs" />
+    <Compile Include="FollowPlan\FollowPlanContent.cs" />
+    <Compile Include="FollowPlan\FollowTemPlate.cs" />
+    <Compile Include="FollowPlan\FollowType.cs" />
     <Compile Include="MysqlTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pub\InfoToUser.cs" />
+    <Compile Include="QuickReply\QuickReply.cs" />
+    <Compile Include="Referral\Referrallog.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>copy $(ProjectDir)App_Data\HPYL.Model.xml $(SolutionDir)TTT\App_Data\HPYL.Model.xml</PreBuildEvent>
+  </PropertyGroup>
 </Project>

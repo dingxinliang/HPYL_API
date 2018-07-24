@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net.Http.Formatting;
 using System.Web.Http;
 using HPYL_API.App_Start.Attribute;
+using Newtonsoft.Json.Converters;
+
 namespace HPYL_API
 {
     public static class WebApiConfig
@@ -20,7 +22,14 @@ namespace HPYL_API
             //config.Filters.Add(new  HPYL_API.App_Start.Attribute.TokenAttribute());
 
             config.Filters.Add(new ExceptionAttribute());//全局异常监控
-
+        
+            //配置返回的时间类型数据格式  
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.Converters.Add(
+                new Newtonsoft.Json.Converters.IsoDateTimeConverter()
+                {
+                    DateTimeFormat = "yyyy-MM-dd HH:mm:ss"
+                }
+            );
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{action}/{id}",

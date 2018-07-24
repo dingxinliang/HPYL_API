@@ -144,6 +144,10 @@
     <Reference Include="XL.Util.Log">
       <HintPath>..\..\DLL\XL.Util.Log.dll</HintPath>
     </Reference>
+    <Reference Include="XL.Util.WebControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\XL.Util.WebControl.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ApplicationInsights">
@@ -208,9 +212,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\DoctorAdvice\DoctorAdviceController.cs" />
+    <Compile Include="Controllers\FollowPlan\FollowPlanController.cs" />
+    <Compile Include="Controllers\FollowType\FollowTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QuickReply\QuickReplyController.cs" />
+    <Compile Include="Controllers\Referral\ReferralController.cs" />
     <Compile Include="Controllers\TestAController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

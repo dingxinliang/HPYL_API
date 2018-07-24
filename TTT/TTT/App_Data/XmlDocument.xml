@@ -597,5 +597,165 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:HPYL_API.Controllers.DoctorAdvice.DoctorAdviceController">
+            <summary>
+            医嘱计划
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.DoctorAdvice.DoctorAdviceController.GetAdviceArticleList(System.Int64)">
+            <summary>
+            获取诊疗项目医嘱内容模板列表
+            </summary>
+            <param name="HFT_ID">诊疗项目Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.DoctorAdvice.DoctorAdviceController.GetDoctorFollowContent(System.Int64)">
+            <summary>
+            获取单条医嘱内容及计划
+            </summary>
+            <param name="HAA_ID">文章ID（内容模板列表返回）</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.DoctorAdvice.DoctorAdviceController.InFollowPlan(HPYL.Model.BaseDoctorFollowPlan)">
+            <summary>
+            新增医嘱随访计划（如果发送医嘱选择关联随访计划请调用此接口写入）
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.FollowPlanController">
+            <summary>
+            随访计划
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.GetFollowTemPlateList(System.Int64)">
+            <summary>
+            获取诊疗项目随访计划模板
+            </summary>
+            <param name="HFT_ID">诊疗项目Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.GetTemPlateContent(System.Int64)">
+            <summary>
+            获取新增随访计划内容、默认开始时间，(随访计划名称、医生、患者、提醒方式操作者自己代入)
+            </summary>
+            <param name="HTP_ID">模板Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.GetPlateContent(System.Int64)">
+            <summary>
+            获取单条随访计划信息
+            </summary>
+            <param name="HFP_ID">信息标识ID 随访计划列表有返回</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.MyFollowPlanList(System.Int64,System.Int32,System.Int32)">
+            <summary>
+            我的随访计划信息列表
+            </summary>
+            <param name="UserId">当前用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.InFollowPlan(HPYL.Model.BaseFollowPlan)">
+            <summary>
+            新增随访计划
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.ChangeFollowPlan(HPYL.Model.FollowPlan)">
+            <summary>
+            更改随访计划,更改前通过GetPlateContent接口先获取原有数据
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowPlanController.DelFollowPlan(HPYL.Model.InfoToUser)">
+            <summary>
+            删除模板计划（KeyId为 HFP_ID 列表有返回）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.FollowType.FollowTypeController">
+            <summary>
+            诊所项目类
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.FollowTypeJoinList(System.Int64,System.Int64)">
+            <summary>
+            获取诊疗项目一级分类+二级用户分类
+            </summary>
+            <param name="ClinicId">诊所ID</param>
+            <param name="UID">当前登录用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.FollowTypeList(System.Int64)">
+            <summary>
+            获取诊疗项目一级分类(ClinicId 诊所ID)
+            </summary>
+            <param name="ClinicId">诊所ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.FollowTypeList(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            获取诊疗项目2级分类
+            </summary>
+            <param name="ClinicId">诊所ID</param>
+            <param name="UID">当前登录用户ID</param>
+            <param name="ParentId">父类ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.QuickReply.QuickReplyController">
+            <summary>
+            快捷回复
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.QuickReply.QuickReplyController.QuickReplyList(System.Int64)">
+            <summary>
+            获取快捷回复
+            </summary>
+            <param name="UserID">当前登录用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.QuickReply.QuickReplyController.GetModel(System.Int64,System.Int64)">
+            <summary>
+            获取快捷回复对象
+            </summary>
+            <param name="HQR_ID">标识列 列表有返回</param>
+            <param name="UserId">当前登录用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.QuickReply.QuickReplyController.InQuickReply(HPYL.Model.BaseQuickReply)">
+            <summary>
+            新增快捷回复
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.QuickReply.QuickReplyController.Change(HPYL.Model.QuickReply)">
+            <summary>
+            更改快捷回复,更改前通过GetModel接口先获取原有数据
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.QuickReply.QuickReplyController.Del(HPYL.Model.InfoToUser)">
+            <summary>
+            删除快捷回复（KeyId为 HQR_ID 列表有返回）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.Referral.ReferralController">
+            <summary>
+            转诊
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.Referral.ReferralController.InReferral(HPYL.Model.BaseReferrallog)">
+            <summary>
+            新增转诊
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

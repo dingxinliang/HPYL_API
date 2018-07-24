@@ -39,7 +39,7 @@ namespace  HPYL_API.Areas.HelpPage
             //    HttpContext.Current.Server.MapPath("~/App_Data/XL.Model.xml"), HttpContext.Current.Server.MapPath("~/App_Data/XL.Application.Entity.xml"), HttpContext.Current.Server.MapPath("~/App_Data/XL.Application.PostEntity.xml"), HttpContext.Current.Server.MapPath("~/App_Data/XL.Application.GetEntity.xml")));
 
 
-            config.SetDocumentationProvider(new MultiXmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
+            config.SetDocumentationProvider(new MultiXmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml"), HttpContext.Current.Server.MapPath("~/App_Data/HPYL.Model.xml")));
 
             //// Uncomment the following to use the documentation from XML documentation file.
             //config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));
