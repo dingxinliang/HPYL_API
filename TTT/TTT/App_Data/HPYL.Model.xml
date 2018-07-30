@@ -349,22 +349,22 @@
         </member>
         <member name="P:HPYL.Model.InfoToUser.UserID">
             <summary>
-            当前登录用户
+            当前登录用户(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.InfoToUser.KeyId">
             <summary>
-            操作信息标识
+            操作信息标识(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseQuickReply.HQR_Content">
             <summary>
-            快捷回复内容
+            快捷回复内容(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseQuickReply.HQR_UserId">
             <summary>
-            创建者
+            创建者(必填)
             </summary>
         </member>
         <member name="T:HPYL.Model.QuickReply">
@@ -374,7 +374,7 @@
         </member>
         <member name="P:HPYL.Model.QuickReply.HQR_ID">
             <summary>
-            标识列
+            标识列 (必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.QuickReply.HQR_Time">
@@ -389,32 +389,32 @@
         </member>
         <member name="P:HPYL.Model.BaseReferrallog.HRL_PatientId">
             <summary>
-            患者ID
+            患者ID(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseReferrallog.HRL_Info">
             <summary>
-            患者主诉信息 必填
+            患者主诉信息 (必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseReferrallog.HRL_DoctorId">
             <summary>
-            接诊医生
+            接诊医生(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseReferrallog.HRL_Commission">
             <summary>
-            分成比例
+            分成比例(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseReferrallog.HRL_UserID">
             <summary>
-            当前登录医生ID
+            当前登录医生ID(必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.BaseReferrallog.HRL_Remark">
             <summary>
-            给医生的备注 非必填
+            给医生的备注 (非必填)
             </summary>
         </member>
         <member name="P:HPYL.Model.Referrallog.HRL_ID">
