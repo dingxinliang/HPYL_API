@@ -4,6 +4,111 @@
         <name>HPYL.Model</name>
     </assembly>
     <members>
+        <member name="T:HPYL.Model.Agreement">
+            <summary>
+            注册协议表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Agreement.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Agreement.AgreementType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Agreement.AgreementContent">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Agreement.LastUpdateTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ArticleCategories.Id">
+            <summary>
+            auto_increment
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ArticleCategories.ParentCategoryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ArticleCategories.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ArticleCategories.DisplaySequence">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ArticleCategories.IsDefault">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.Id">
+            <summary>
+            auto_increment
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.CategoryId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.IconUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.AddDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.DisplaySequence">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.Meta_Title">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.Meta_Description">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.Meta_Keywords">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Articles.IsRelease">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:HPYL.Model.AdviceArticle">
             <summary>
             医嘱文章
@@ -325,6 +430,352 @@
             初始化数据
             </summary>
         </member>
+        <member name="T:HPYL.Model.LoginMembers">
+            <summary>
+            数据访问类:LoginMembers
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.LoginMembers.LoginPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.LoginMembers.PhoneCode">
+            <summary>
+            动态密码
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.MemberCard">
+            <summary>
+            医生的名片
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MemberCard.ShopName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MemberCard.UserPhoto">
+            <summary>
+            医生头像
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MemberCard.UserName">
+            <summary>
+            医生姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MemberCard.ShopCategorName">
+            <summary>
+            所在科室
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MemberCard.JodName">
+            <summary>
+            职称
+            </summary>
+        </member>
+        <!-- 对于成员“P:HPYL.Model.Members.Id”忽略有格式错误的 XML 注释 -->
+        <member name="P:HPYL.Model.Members.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Password">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.PasswordSalt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Nick">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Sex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.CreateDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.TopRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.RegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.RealName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.CellPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.QQ">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Disabled">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.LastLoginDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.OrderNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.TotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Expenditure">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Points">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Photo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.ParentSellerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Remark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.PayPwd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.PayPwdSalt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.InviteUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.ShareUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.BirthDay">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.Occupation">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.NetAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Members.LastConsumptionTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.MLoginMember">
+            <summary>
+            登录验证 返回模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MLoginMember.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MLoginMember.RoleId">
+            <summary>
+            用户角色 0 患者 1 医生 2 医生未审核角色
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.MPatient">
+            <summary>
+            新建患者模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.DocUserId">
+             <summary>
+            医生用户ID
+             </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.CellPhone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.ItemID">
+            <summary>
+            治疗项目ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MPatient.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.MRegister">
+            <summary>
+            注册模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.UserId">
+             <summary>
+            用户ID
+             </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.DateBirth">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.TopRegionId">
+            <summary>
+            省份ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.RegionId">
+            <summary>
+            省市区ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.ShopUserId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.ShopCategorId">
+            <summary>
+            诊所科室ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.JodId">
+            <summary>
+            职称ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.ZyId">
+            <summary>
+            专业ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.PracticeYID">
+            <summary>
+            执业年限ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.LicenseCert1">
+            <summary>
+            资格证书1
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.LicenseCert2">
+            <summary>
+            资格证书2
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.IDCardUrl1">
+            <summary>
+            身份证1
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.IDCardUrl2">
+            <summary>
+            身份证2
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.WorkUrl1">
+            <summary>
+            本人工作证明1
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.WorkUrl2">
+            <summary>
+            本人工作证明2
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MRegister.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
         <member name="T:HPYL.Model.MysqlTest">
             <summary>
             utest:实体类(属性说明自动提取数据库字段的描述信息)
@@ -357,6 +808,11 @@
             操作信息标识(必填)
             </summary>
         </member>
+        <member name="T:HPYL.Model.BaseQuickReply">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:HPYL.Model.BaseQuickReply.HQR_Content">
             <summary>
             快捷回复内容(必填)
@@ -380,6 +836,26 @@
         <member name="P:HPYL.Model.QuickReply.HQR_Time">
             <summary>
             创建时间 非必填
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.RecruitPlan">
+            <summary>
+            招募分享内容信息 -分销员-医生注册协议
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.RecruitPlan.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.RecruitPlan.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.RecruitPlan.Content">
+            <summary>
+            内容
             </summary>
         </member>
         <member name="T:HPYL.Model.BaseReferrallog">
@@ -435,6 +911,541 @@
         <member name="P:HPYL.Model.Referrallog.HRL_ReceiveTime">
             <summary>
             接诊时间
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.Shopbranch">
+            <summary>
+            Shopbranch门店表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.Id">
+            <summary>
+            auto_increment
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.ShopId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.ShopBranchName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.AddressId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.AddressPath">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.AddressDetail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.ContactUser">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.ContactPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.Status">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.CreateDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.ServeRadius">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.Longitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.Latitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.ShopImages">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.IsStoreDelive">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.IsAboveSelf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.StoreOpenStartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.StoreOpenEndTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.IsRecommend">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.RecommendSequence">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.DeliveFee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.DeliveTotalFee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopbranch.FreeMailFee">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.Shopcategories">
+            <summary>
+            诊所科室模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.ShopId">
+            <summary>
+            店铺ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.ParentCategoryId">
+            <summary>
+            上级分类ID 默认顶级 为0
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.Name">
+            <summary>
+            分类名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.DisplaySequence">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.IsShow">
+            <summary>
+            是否显示
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shopcategories.UserId">
+            <summary>
+            创建者 0 系统 否则为用户ID
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.Shops">
+            <summary>
+             shops:店铺表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.Id">
+            <summary>
+            auto_increment
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.GradeId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ShopName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.Logo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.SubDomains">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.Theme">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.IsSelf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ShopStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.RefuseReason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CreateDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.EndDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyEmployeeCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyRegisteredCapital">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ContactsName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ContactsPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ContactsEmail">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessLicenceNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessLicenceNumberPhoto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessLicenceRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessLicenceStart">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessLicenceEnd">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessSphere">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.OrganizationCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.OrganizationCodePhoto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.GeneralTaxpayerPhot">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BankAccountName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BankAccountNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BankName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BankCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BankRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BankPhoto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.TaxRegistrationCertificate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.TaxpayerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.TaxRegistrationCertificatePhoto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.PayPhoto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.PayRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.SenderName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.SenderAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.SenderPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.Freight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.FreeFreight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.Stage">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.SenderRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessLicenseCert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ProductCert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.OtherCert">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.legalPerson">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.CompanyFoundingDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.BusinessType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.IDCard">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.IDCardUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.IDCardUrl2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.WeiXinNickName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.WeiXinSex">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.WeiXinAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.WeiXinTrueName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.WeiXinOpenId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.WeiXinImg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.AutoAllotOrder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Shops.ProvideInvoice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.SMS.MSMS">
+            <summary>
+            发送短信模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.MSMS.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.MSMS.Message">
+            <summary>
+            发送消息
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.MSMS.code">
+            <summary>
+            发送验证码
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.MSMS.sigin">
+            <summary>
+            发送类型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.ShortMessage.Returnstatus">
+            <summary>
+            返回状态值：成功返回Success 失败返回：Faild
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.ShortMessage.Message">
+            <summary>
+            相关的错误描述
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.ShortMessage.Remainpoint">
+            <summary>
+            返回余额
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.ShortMessage.TaskID">
+            <summary>
+            返回本次任务的序列ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.ShortMessage.SuccessCounts">
+            <summary>
+            成功短信数：当成功后返回提交成功短信数
             </summary>
         </member>
     </members>

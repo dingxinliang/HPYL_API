@@ -44,12 +44,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agreement\AgreementBLL.cs" />
+    <Compile Include="ArticleCategories\ArticleCategoriesBLL.cs" />
+    <Compile Include="Articles\ArticlesBLL.cs" />
     <Compile Include="DoctorAdvice\DoctorAdviceBLL.cs" />
     <Compile Include="FollowPlan\FollowPlanBLL.cs" />
+    <Compile Include="Members\Members.cs" />
     <Compile Include="MysqlTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickReply\QuickReplyBLL.cs" />
+    <Compile Include="RecruitPlan\RecruitPlanBLL.cs" />
     <Compile Include="Referral\ReferralBLL.cs" />
+    <Compile Include="Shopbranch\ShopbranchBLL.cs" />
+    <Compile Include="Shopcategories\ShopcategoriesBLL.cs" />
+    <Compile Include="Shops\ShopsBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\数据核心\HPYL.DAL\HPYL.DAL.csproj">

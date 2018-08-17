@@ -31,7 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="HPYL.Common">
+      <HintPath>..\HPYL.Common\bin\Debug\HPYL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DLL\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,13 +53,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Agreement\AgreementDAL.cs" />
+    <Compile Include="ArticleCategories\ArticleCategoriesDAL.cs" />
+    <Compile Include="Articles\ArticlesDAL.cs" />
     <Compile Include="DoctorAdvice\DoctorAdviceDAL.cs" />
     <Compile Include="FollowPlan\FollowPlanDAL.cs" />
+    <Compile Include="Members\MembersDAL.cs" />
     <Compile Include="MysqlTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickReply\QuickReplyDAL.cs" />
+    <Compile Include="RecruitPlan\RecruitPlanDAL.cs" />
     <Compile Include="Referral\ReferralDAL.cs" />
+    <Compile Include="Shopbranch\ShopbranchDAL.cs" />
+    <Compile Include="Shopcategories\ShopcategoriesDAL.cs" />
+    <Compile Include="Shops\ShopsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\数据模型\HPYL.Model\HPYL.Model.csproj">
