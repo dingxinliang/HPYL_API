@@ -66,7 +66,7 @@ namespace HPYL.BLL
 
         public FollowPlan GetPlateContent(long hFP_ID)
         {
-            return dal.GetModel(hFP_ID);
+            return dal.GetPlateContent(hFP_ID);
         }
 
         public DataTable GetPageDate(Pagination pagination, long userId)
@@ -82,5 +82,10 @@ namespace HPYL.BLL
         {
             return dal.DelFollowPlan(userId, hFP_ID);
         }
+        public bool AddProject(ProjectPost model)
+        {
+            return dal.AddProject(model);
+        }
+        
     }
 }

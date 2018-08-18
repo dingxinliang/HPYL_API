@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{01820217-719D-420E-9710-2435FF0456AF}</ProjectGuid>
+    <ProjectGuid>{62527462-7990-4DC4-9E07-CCD155598002}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HPYL.DAL</RootNamespace>
-    <AssemblyName>HPYL.DAL</AssemblyName>
+    <RootNamespace>HPYL.Common</RootNamespace>
+    <AssemblyName>HPYL.Common</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,39 +38,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="XL.Util.Extension">
-      <HintPath>..\..\..\DLL\XL.Util.Extension.dll</HintPath>
-    </Reference>
-    <Reference Include="XL.Util.WebControl">
-      <HintPath>..\..\..\DLL\XL.Util.WebControl.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calendar\CalendarDAL.cs" />
-    <Compile Include="Calendar\OrderService.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="DoctorAdvice\DoctorAdviceDAL.cs" />
-    <Compile Include="FollowPlan\FollowPlanDAL.cs" />
-    <Compile Include="MysqlTest.cs" />
+    <Compile Include="DateHelper.cs" />
+    <Compile Include="EnumHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuickReply\QuickReplyDAL.cs" />
-    <Compile Include="Referral\ReferralDAL.cs" />
-    <Compile Include="User\UserDAL.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\基础设施\HPYL.Common\HPYL.Common.csproj">
-      <Project>{62527462-7990-4dc4-9e07-ccd155598002}</Project>
-      <Name>HPYL.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\数据模型\HPYL.Model\HPYL.Model.csproj">
-      <Project>{471d6ce3-9a20-4765-8830-99f6aca4c548}</Project>
-      <Name>HPYL.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
-      <Project>{5c70d89a-85ff-404c-9536-bfeeab3e7fd2}</Project>
-      <Name>DBUtility</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

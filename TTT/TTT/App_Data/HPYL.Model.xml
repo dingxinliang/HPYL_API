@@ -4,6 +4,616 @@
         <name>HPYL.Model</name>
     </assembly>
     <members>
+        <member name="T:HPYL.Model.BaseCalendar">
+            <summary>
+            日历
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseCalendar.year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseCalendar.month">
+            <summary>
+            月份
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseCalendar.day">
+            <summary>
+            日
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseCalendar.totalnum">
+            <summary>
+            可接诊人数
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseCalendar.receivenum">
+            <summary>
+            已预约人数
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.GDCalendar">
+            <summary>
+            固定排班
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.GDCalendar.week">
+            <summary>
+            周几
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.GDCalendar.state">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.GDCalendar.total">
+            <summary>
+            接诊数量
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.ZDYCalendar">
+            <summary>
+            自定义排班
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ZDYCalendar.date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ZDYCalendar.state">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ZDYCalendar.total">
+            <summary>
+            接诊数量
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BookingTime">
+            <summary>
+            预约时间段
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingTime.startTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingTime.endTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BookingList">
+            <summary>
+            预约列表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingList.Title">
+            <summary>
+            组合标题
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingList.total">
+            <summary>
+            待确认数
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingList.BookingUser">
+            <summary>
+            预约用户列表
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BookingUser">
+            <summary>
+            预约用户信息
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.Id">
+            <summary>
+            预约单ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.bookingtime">
+            <summary>
+            预约时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.userhead">
+            <summary>
+            用户头像
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.username">
+            <summary>
+            用户姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.ClinicName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.address">
+            <summary>
+            就诊地址
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.project">
+            <summary>
+            就诊项目
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BookingUser.state">
+            <summary>
+            预约状态
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.Project">
+            <summary>
+            就诊项目
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Project.Id">
+            <summary>
+            项ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.Project.Name">
+            <summary>
+            就诊项
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.OrderState">
+            <summary>
+            预约单状态
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BaseDate">
+            <summary>
+            日期基础类
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDate.DateId">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDate.ClientId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDate.State">
+            <summary>
+            是否启用
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDate.UserId">
+            <summary>
+            用户iD
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDate.Week">
+            <summary>
+            周几
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseDate.DateTimeList">
+            <summary>
+            每天时间段接诊设置
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.CalendarDate">
+            <summary>
+            排班计划表
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.CalendarDate.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.CalendarDate.Year">
+            <summary>
+            年
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.CalendarDate.Month">
+            <summary>
+            月
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.CalendarDate.Day">
+            <summary>
+            日
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.DateTimeList">
+            <summary>
+            时间段设置
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DateTimeList.Id">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DateTimeList.Name">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DateTimeList.Tag">
+            <summary>
+            标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DateTimeList.Num">
+            <summary>
+            接诊数量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.DateTimeList.State">
+            <summary>
+            开启状态
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.ClientId">
+            <summary>
+            诊所id（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.DoctorId">
+            <summary>
+            当前医生ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.PatientId">
+            <summary>
+            患者ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.Date">
+            <summary>
+            就诊日期（格式如 2018-08-13）（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.StartTime">
+            <summary>
+            就诊开始时间 (格式如 15:20)（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.EndTime">
+            <summary>
+            就诊结束时间 (格式如 15:20)（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.AddressId">
+            <summary>
+            就诊地点ID（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.Address">
+            <summary>
+            接诊地址（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.ProjectIdList">
+            <summary>
+            就诊项目Id 列表字符串（多个项目","拼接隔开 如"1,2,3,4,5"）（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.Remind">
+            <summary>
+            提醒方式（0 患者 1 自己 2 全部）（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderModel.Content">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.OrderInfo">
+            <summary>
+            预约单详情
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderInfo.DoctorName">
+            <summary>
+            医生姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderInfo.OrderId">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderInfo.IsCannel">
+            <summary>
+            是否可以取消预约（目前提前30分钟可以取消） -1 不可以 0 可以 
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderInfo.PatientName">
+            <summary>
+            患者姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderInfo.project">
+            <summary>
+            就诊科目
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProductItem.Id">
+            <summary>
+            商品ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProductItem.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProductItem.Price">
+            <summary>
+            销售价
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.OrderId">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.ShopId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.ProductId">
+            <summary>
+            商品ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.SkuId">
+            <summary>
+            SkuId
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.SKU">
+            <summary>
+            SKU 可为空
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.ReturnQuantity">
+            <summary>
+            退货数量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.CostPrice">
+            <summary>
+            成本价
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.SalePrice">
+            <summary>
+            销售价
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.DiscountAmount">
+            <summary>
+            优惠金额
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.RealTotalPrice">
+            <summary>
+            实付金额
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.RefundPrice">
+            <summary>
+            退款金额
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.ProductName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.Color">
+            <summary>
+            sku颜色
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.Size">
+            <summary>
+            sku尺寸
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.Version">
+            <summary>
+            sku版本
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.ThumbnailsUrl">
+            <summary>
+            缩略图
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.CommisRate">
+            <summary>
+            CommisRate
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.EnabledRefundAmount">
+            <summary>
+            可退金额
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.IsLimitBuy">
+            <summary>
+            是否为限时购商
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.DistributionRate">
+            <summary>
+            分销毙了
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.EnabledRefundIntegral">
+            <summary>
+            可退积分抵扣金额
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.CouponDiscount">
+            <summary>
+            满减平坦
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrderProduct.FullDiscount">
+            <summary>
+            优惠
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BaseGlobalDate">
+            <summary>
+             全局基础类
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseGlobalDate.UserId">
+            <summary>
+            当前医生ID （必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BaseGlobalDate.ClinetId">
+            <summary>
+            诊所ID（必填）
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.BasePostDate">
+            <summary>
+            日期基础类
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BasePostDate.Year">
+            <summary>
+            年（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BasePostDate.Month">
+            <summary>
+            月（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.BasePostDate.Day">
+            <summary>
+            日（必填）
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.PostDateTime">
+            <summary>
+            日期接诊数量数据提交类
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostDateTime.Tag">
+             <summary>
+            时间标识 M 上午,A 下午,N 晚上 （必填）
+             </summary>
+        </member>
+        <member name="P:HPYL.Model.PostDateTime.Num">
+            <summary>
+            接诊患者数量（必填）
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.PostDateState">
+            <summary>
+            日期接诊 状态开启关闭
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostDateState.Flag">
+            <summary>
+            开启/关闭的标识  M 上午,A 下午,N 晚上,D全天 （必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostDateState.State">
+            <summary>
+            开启/关闭状态  0 关闭 1 开启
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.PostWeekNum">
+            <summary>
+            周接诊数量设置
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostWeekNum.DateId">
+            <summary>
+            信息ID（接口api/Calendar/GetSystemWeek返回数据取得DateId（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostWeekNum.Tag">
+             <summary>
+            时间标识 M 上午,A 下午,N 晚上 （必填）
+             </summary>
+        </member>
+        <member name="P:HPYL.Model.PostWeekNum.Num">
+            <summary>
+            接诊患者数量（必填）
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.PostWeekState">
+            <summary>
+            周接诊状态设置
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostWeekState.DateId">
+            <summary>
+            信息ID（接口api/Calendar/GetSystemWeek返回数据取得DateId（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.PostWeekState.Flag">
+             <summary>
+            时间标识 M 上午,A 下午,N 晚上,D全天  （必填）
+             </summary>
+        </member>
+        <member name="P:HPYL.Model.PostWeekState.State">
+            <summary>
+            接诊患者数量（必填）
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.HPYL_CalendarTime.HCW_ID">
+            <summary>
+            周期主键
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.HPYL_CalendarTime.HCD_Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.HPYL_CalendarTime.HCD_Tag">
+            <summary>
+            标识 M 上午,A 下午,N 晚上
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.HPYL_CalendarTime.HCD_Num">
+            <summary>
+            接诊数量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.HPYL_CalendarTime.HCD_State">
+            <summary>
+            开启状态
+            </summary>
+        </member>
         <member name="T:HPYL.Model.AdviceArticle">
             <summary>
             医嘱文章
@@ -162,6 +772,16 @@
         <member name="P:HPYL.Model.FollowPlan.HFP_State">
             <summary>
             随访状态，不需要传递
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlan.DoctorName">
+            <summary>
+            医生姓名
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.FollowPlan.PatientName">
+            <summary>
+            患者姓名 
             </summary>
         </member>
         <member name="T:HPYL.Model.MyPlanListDate">
@@ -325,6 +945,146 @@
             初始化数据
             </summary>
         </member>
+        <member name="P:HPYL.Model.ProjectPost.ShopId">
+            <summary>
+            诊所ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectPost.UserId">
+            <summary>
+            当前医生ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectPost.ProjectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectPost.ShopCategoryId">
+            <summary>
+            所属一级类别Id
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.CategoryId">
+            <summary>
+            平台分类ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.CategoryPath">
+            <summary>
+            分类标识
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.TypeId">
+            <summary>
+            类别ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.BrandId">
+            <summary>
+            品牌ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.ProductCode">
+            <summary>
+            项目代码
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.ShortDescription">
+            <summary>
+            广告词
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.SaleStatus">
+            <summary>
+            销售状态
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.AuditStatus">
+            <summary>
+            审核状态
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.AddedDate">
+            <summary>
+            添加时间
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.DisplaySequence">
+            <summary>
+            显示顺序
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.ImagePath">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.MarketPrice">
+            <summary>
+            市场价
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.MinSalePrice">
+            <summary>
+            最低销售价
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.HasSKU">
+            <summary>
+            是否有SKU
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.VistiCounts">
+            <summary>
+            浏览器次数
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.SaleCounts">
+            <summary>
+            销售量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.FreightTemplateId">
+            <summary>
+            运费末班
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.Volume">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.MeasureUnit">
+            <summary>
+            计量单位
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.EditStatus">
+            <summary>
+            修改状态 0 正常 1己修改 2待审核 3 己修改并待审核
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.IsDeleted">
+            <summary>
+            是否已删除
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ProjectBase.MaxBuyCount">
+            <summary>
+            最大购买量
+            </summary>
+        </member>
         <member name="T:HPYL.Model.MysqlTest">
             <summary>
             utest:实体类(属性说明自动提取数据库字段的描述信息)
@@ -435,6 +1195,21 @@
         <member name="P:HPYL.Model.Referrallog.HRL_ReceiveTime">
             <summary>
             接诊时间
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.User.LoginUser">
+            <summary>
+            登录模型传入
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.User.LoginUser.LoginPhone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.User.LoginUser.PhoneCode">
+            <summary>
+            动态密码
             </summary>
         </member>
     </members>

@@ -119,7 +119,7 @@ namespace HPYL_API.Controllers.FollowType
         /// <param name="ParentId">父类ID</param>
         /// <returns></returns>
         [HttpGet]
-        public CallBackResult FollowTypeList(long ClinicId, long UID, long ParentId)
+        public CallBackResult FollowTypeSecondList(long ClinicId, long UID, long ParentId)
         {
             CallBackResult apiResult = new CallBackResult();
             try
@@ -148,9 +148,45 @@ namespace HPYL_API.Controllers.FollowType
 
         }
 
-  
+
 
         #endregion
 
+        #region 提交数据
+
+        /// <summary>
+        /// 添加诊疗项目
+        /// </summary>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateModel]
+        public CallBackResult InFollowPlan(ProjectPost info)
+        {
+            CallBackResult apiResult = new CallBackResult();
+            try
+            {
+                if (FBLL.AddProject(info))
+                {
+                    apiResult.Result = 1;
+                    apiResult.Message = "已成功添加诊疗项目";
+                }
+                else
+                {
+                    apiResult.Result = 0;
+                    apiResult.Message = "诊疗项目添加失败";
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                apiResult.Result = 0;
+                apiResult.Message = "诊疗项目添加失败";
+                new CCBException(" 添加诊疗项目", ex);
+            }
+            return apiResult;
+        }
+        #endregion
     }
 }

@@ -70,6 +70,15 @@ namespace HPYL.Model
         /// 随访状态，不需要传递
         /// </summary>
         public int HFP_State { set; get; }
+        /// <summary>
+        /// 医生姓名
+        /// </summary>
+        public string DoctorName { set; get; }
+        /// <summary>
+        /// 患者姓名 
+        /// </summary>
+        public string PatientName { set; get; }
+
     }
 
 

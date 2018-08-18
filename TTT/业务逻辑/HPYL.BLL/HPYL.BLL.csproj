@@ -44,6 +44,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calendar\CalendarBLL.cs" />
     <Compile Include="DoctorAdvice\DoctorAdviceBLL.cs" />
     <Compile Include="FollowPlan\FollowPlanBLL.cs" />
     <Compile Include="MysqlTest.cs" />

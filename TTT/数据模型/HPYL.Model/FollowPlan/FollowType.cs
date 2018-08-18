@@ -46,21 +46,21 @@ namespace HPYL.Model
     /// <summary>
     /// 一级分类
     /// </summary>
-    public class GetFollowType: BaseFollowType
+    public class GetFollowType : BaseFollowType
     {
-        public List <SecondList> SecondList{ get; set; }
+        public List<SecondList> SecondList { get; set; }
     }
-      /// <summary>
-      /// 二级分类
-      /// </summary>
-    public class SecondList: BaseFollowType
+    /// <summary>
+    /// 二级分类
+    /// </summary>
+    public class SecondList : BaseFollowType
     {
 
     }
     /// <summary>
     /// 诊疗科目
     /// </summary>
-   public class FollowType
+    public class FollowType
     {
         /// <summary>
 		/// 标识
@@ -80,7 +80,7 @@ namespace HPYL.Model
         /// 项目名称（必填）
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "项目名称参数无效")]
-        [StringLength(20, MinimumLength =2, ErrorMessage = "项目名称的长度必须大于{2}个字并小于{1}个字")]
+        [StringLength(20, MinimumLength = 2, ErrorMessage = "项目名称的长度必须大于{2}个字并小于{1}个字")]
         public string HFT_Name { set; get; }
         /// <summary>
         /// 创建人Id（必填）
@@ -90,7 +90,7 @@ namespace HPYL.Model
         /// <summary>
         /// 创建时间
         /// </summary>
-        
+
         public DateTime? HFT_CreateTime { set; get; }
         /// <summary>
         /// 启用状态(0 未启用 1启用)
@@ -107,8 +107,10 @@ namespace HPYL.Model
         public void Create()
         {
             this.HFT_CreateTime = DateTime.Now;
-            this.HFT_State =1;
-            this.HFT_Layer =2;
+            this.HFT_State = 1;
+            this.HFT_Layer = 2;
         }
     }
+
+ 
 }

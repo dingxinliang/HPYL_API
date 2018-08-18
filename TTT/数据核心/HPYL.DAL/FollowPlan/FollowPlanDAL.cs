@@ -44,7 +44,7 @@ namespace HPYL.DAL
         /// <returns></returns>
         public DataTable FollowTypeList(long clinicId)
         {
-            string strSql = "select HFT_ID,HFT_Name,HFT_ParentId,HFT_UserId from HPYL_FollowType where HFT_ShopId=@HFT_ShopId and HFT_ParentId=0 and HFT_State=1 and HFT_UserId=0 order by HFT_Layer";
+            string strSql = "select Id HFT_ID,Name HFT_Name,ParentCategoryId HFT_ParentId,UserId HFT_UserId from Himall_ShopCategories where ShopId=@HFT_ShopId and ParentCategoryId=0 and IsShow=1 and UserId=0 order by DisplaySequence";
             MySqlParameter[] parameters = {
                         new MySqlParameter("@HFT_ShopId",clinicId)
             };
@@ -83,6 +83,8 @@ namespace HPYL.DAL
                 return true;
             }
         }
+
+       
 
         /// <summary>
         /// 删除随访计划
@@ -132,6 +134,36 @@ namespace HPYL.DAL
 
         #region 得到一个对象实体
 
+
+        /// <summary>
+        /// 关联实体
+        /// </summary>
+        /// <param name="hFP_ID"></param>
+        /// <returns></returns>
+        public FollowPlan GetPlateContent(long HFP_ID)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select HFP_ID,HTP_ID,HFP_Name,HFP_CreateTime,HFP_UserId,HFP_Remind,HFP_Content,HFP_DoctorId,HFP_PatientId,HFP_State,b.RealName DoctorName,c.RealName PatientName from hpyl_followplan a ");
+            strSql.Append(" INNER JOIN himall_members b ON a.HFP_DoctorId = b.Id ");
+            strSql.Append(" INNER JOIN himall_members c ON a.HFP_PatientId = c.Id ");
+            strSql.Append(" where HFP_ID=@HFP_ID");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("@HFP_ID", HFP_ID)
+            };
+
+            FollowPlan model = new FollowPlan();
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return DataRowToModel(ds.Tables[0].Rows[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /// <summary>
         /// 得到一个对象实体
         /// </summary>
@@ -145,6 +177,8 @@ namespace HPYL.DAL
                     new MySqlParameter("@HFP_ID", HFP_ID)
             };
 
+
+            
             FollowPlan model = new FollowPlan();
             DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
             if (ds.Tables[0].Rows.Count > 0)
@@ -205,6 +239,14 @@ namespace HPYL.DAL
                 {
                     model.HFP_State = int.Parse(row["HFP_State"].ToString());
                 }
+                if (row["DoctorName"] != null && row["DoctorName"].ToString() != "")
+                {
+                    model.DoctorName = row["DoctorName"].ToString();
+                }
+                if (row["PatientName"] != null && row["PatientName"].ToString() != "")
+                {
+                    model.PatientName =row["PatientName"].ToString();
+                }
             }
             return model;
         }
@@ -243,6 +285,9 @@ namespace HPYL.DAL
             }
         }
 
+
+
+          
         /// <summary>
         /// 更新随访计划
         /// </summary>
@@ -283,8 +328,26 @@ namespace HPYL.DAL
             }
         }
 
+        ///// <summary>
+        ///// 获取二级分类
+        ///// </summary>
+        ///// <param name="clinicId">诊所ID</param>
+        ///// <param name="userId">医生ID</param>
+        ///// <param name="parentId">父类ID</param>
+        ///// <returns></returns>
+        //public DataTable FollowTypeSecondList(long clinicId , long userId, long parentId)
+        //{
+        //    string strSql = "select Id HFT_ID,Name HFT_Name,ParentCategoryId HFT_ParentId,UserId HFT_UserId from Himall_ShopCategories where ShopId=@HFT_ShopId and ParentCategoryId=@HFT_ParentId and IsShow=1 and (UserId=@HFT_UserId or UserId=0 )order by DisplaySequence";
+        //    MySqlParameter[] parameters = {
+        //                new MySqlParameter("@HFT_ShopId",clinicId),
+        //                new MySqlParameter("@HFT_ParentId",parentId),
+        //                new MySqlParameter("@HFT_UserId",userId)
+        //    };
+        //    return DbHelperMySQL.Query(strSql, parameters).Tables[0];
+        //}
+
         /// <summary>
-        /// 获取一级+二级分类
+        /// 获取二级分类
         /// </summary>
         /// <param name="clinicId">诊所ID</param>
         /// <param name="userId">医生ID</param>
@@ -292,7 +355,7 @@ namespace HPYL.DAL
         /// <returns></returns>
         public DataTable FollowTypeSecondList(long clinicId , long userId, long parentId)
         {
-            string strSql = "select HFT_ID,HFT_Name,HFT_ParentId,HFT_UserId from HPYL_FollowType where HFT_ShopId=@HFT_ShopId and HFT_ParentId=@HFT_ParentId and HFT_State=1 and HFT_UserId=@HFT_UserId order by HFT_Layer";
+            string strSql = " select  ProductId HFT_ID,ProductName HFT_Name from himall_products a inner join himall_productshopcategories b on a.Id=b.ProductId where ShopId=@HFT_ShopId and (UserId=@HFT_UserId or UserId=0 ) and ShopCategoryId=@HFT_ParentId and IsDeleted=0 and SaleStatus=1  and AuditStatus=2";
             MySqlParameter[] parameters = {
                         new MySqlParameter("@HFT_ShopId",clinicId),
                         new MySqlParameter("@HFT_ParentId",parentId),
@@ -301,6 +364,67 @@ namespace HPYL.DAL
             return DbHelperMySQL.Query(strSql, parameters).Tables[0];
         }
 
+        /// <summary>
+        /// 添加诊疗科目
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool AddProject(ProjectPost model)
+        {
+            ProjectBase Basemole = new ProjectBase();
+            Basemole.Create();
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into himall_products(");
+            strSql.Append("ShopId,CategoryId,CategoryPath,TypeId,BrandId,ProductName,ProductCode,ShortDescription,SaleStatus,AuditStatus,AddedDate,DisplaySequence,ImagePath,MarketPrice,MinSalePrice,HasSKU,VistiCounts,SaleCounts,FreightTemplateId,Weight,Volume,Quantity,MeasureUnit,EditStatus,IsDeleted,MaxBuyCount,UserId)");
+            strSql.Append(" values (");
+            strSql.Append("@ShopId,@CategoryId,@CategoryPath,@TypeId,@BrandId,@ProductName,@ProductCode,@ShortDescription,@SaleStatus,@AuditStatus,@AddedDate,@DisplaySequence,@ImagePath,@MarketPrice,@MinSalePrice,@HasSKU,@VistiCounts,@SaleCounts,@FreightTemplateId,@Weight,@Volume,@Quantity,@MeasureUnit,@EditStatus,@IsDeleted,@MaxBuyCount,@UserId)");
+            strSql.Append(";select @@IDENTITY");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("@ShopId", model.ShopId),
+                    new MySqlParameter("@CategoryId", Basemole.CategoryId),
+                    new MySqlParameter("@CategoryPath",Basemole.CategoryPath),
+                    new MySqlParameter("@TypeId",Basemole.TypeId),
+                    new MySqlParameter("@BrandId",Basemole.BrandId),
+                    new MySqlParameter("@ProductName", model.ProjectName),
+                    new MySqlParameter("@ProductCode", Basemole.ProductCode),
+                    new MySqlParameter("@ShortDescription", Basemole.ShortDescription),
+                    new MySqlParameter("@SaleStatus", Basemole.SaleStatus),
+                    new MySqlParameter("@AuditStatus",Basemole.AuditStatus),
+                    new MySqlParameter("@AddedDate",Basemole.AddedDate),
+                    new MySqlParameter("@DisplaySequence",Basemole.DisplaySequence),
+                    new MySqlParameter("@ImagePath", Basemole.ImagePath),
+                    new MySqlParameter("@MarketPrice",Basemole.MarketPrice),
+                    new MySqlParameter("@MinSalePrice", Basemole.MinSalePrice),
+                    new MySqlParameter("@HasSKU",Basemole.HasSKU),
+                    new MySqlParameter("@VistiCounts", Basemole.VistiCounts),
+                    new MySqlParameter("@SaleCounts", Basemole.SaleCounts),
+                    new MySqlParameter("@FreightTemplateId",Basemole.FreightTemplateId),
+                    new MySqlParameter("@Weight", Basemole.Weight),
+                    new MySqlParameter("@Volume", Basemole.Volume),
+                    new MySqlParameter("@Quantity", Basemole.Quantity),
+                    new MySqlParameter("@MeasureUnit", Basemole.MeasureUnit),
+                    new MySqlParameter("@EditStatus",Basemole.EditStatus),
+                    new MySqlParameter("@IsDeleted", Basemole.IsDeleted),
+                    new MySqlParameter("@MaxBuyCount", Basemole.MaxBuyCount),
+                    new MySqlParameter("@UserId", model.UserId)};
+
+            object obj = DbHelperMySQL.GetSingle(strSql.ToString(), parameters);
+            if (obj == null)
+            {
+                return false;
+            }
+            else
+            {
+                //写入店铺类别与商品关联
+                string sql = "insert into himall_productshopcategories(ProductId,ShopCategoryId)values(" + Convert.ToInt32(obj) + ","+model.ShopCategoryId+")";
+
+                //写入sku
+                sql += ";INSERT INTO himall_skus (`Id`, `ProductId`, `Color`, `Size`, `Version`, `Sku`, `Stock`, `CostPrice`, `SalePrice`, `ShowPic`, `SafeStock`) VALUES ('"+ Convert.ToInt32(obj) + "_0_0_0',  '"+ Convert.ToInt32(obj) + "', NULL, NULL, NULL, NULL, '100000000', '0.00', '"+ Basemole.MinSalePrice+ "', NULL, '0')";
+                DbHelperMySQL.ExecuteSql(sql);
+                return true;
+            }
+        
+        }
         /// <summary>
         /// 获取对应分类模板列表
         /// </summary>

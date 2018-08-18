@@ -212,6 +212,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CalendarDate\CalendarController.cs" />
     <Compile Include="Controllers\DoctorAdvice\DoctorAdviceController.cs" />
     <Compile Include="Controllers\FollowPlan\FollowPlanController.cs" />
     <Compile Include="Controllers\FollowType\FollowTypeController.cs" />
@@ -223,6 +224,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -260,6 +268,7 @@
     <Content Include="Configs\log4net.config" />
     <Content Include="Configs\redis.config" />
     <Content Include="Configs\system.config" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -303,6 +312,10 @@
     <ProjectReference Include="..\业务逻辑\HPYL.BLL\HPYL.BLL.csproj">
       <Project>{8029f222-b491-49a7-b9d8-011a8b769cbb}</Project>
       <Name>HPYL.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\基础设施\HPYL.Common\HPYL.Common.csproj">
+      <Project>{62527462-7990-4dc4-9e07-ccd155598002}</Project>
+      <Name>HPYL.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\数据模型\HPYL.Model\HPYL.Model.csproj">
       <Project>{471d6ce3-9a20-4765-8830-99f6aca4c548}</Project>

@@ -597,6 +597,112 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:HPYL_API.Controllers.CalendarController">
+            <summary>
+            日程
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.GetCalendarList(System.Int32,System.Int32,System.Int64,System.Int64)">
+            <summary>
+            获取每月接诊数(日程日历每日数据统计)
+            </summary>
+            <param name="year">当前选择年份 格式如2018</param>
+            <param name="month">当前选择月份 格式如1</param>
+            <param name="userid">当前登录医生ID</param>
+            <param name="clientId">当前诊所ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.GetDayTimeList(System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <summary>
+            获取选择日期预约时间段的统计情况 
+            </summary>
+            <param name="year">当前选择的年份 如2018</param>
+            <param name="month">当前选择的月份 如01</param>
+            <param name="day">当前选择的日 如11</param>
+            <param name="userid">当前医生ID</param>
+            <param name="clientId">当前诊所ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.GetDayBookingList(System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <summary>
+            获取选择日期的预约用户列表
+            </summary>
+            <param name="year">当前选择的年份 如2018</param>
+            <param name="month">当前选择的月份 如01</param>
+            <param name="day">当前选择的日 如11</param>
+            <param name="userid">当前医生ID</param>
+            <param name="clientId">当前诊所ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.GetCustomDay(System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
+            <summary>
+            获取用户【日期】接诊设置（周排班上面功能模块）,可以任选一天进来设置接诊
+            </summary>
+            <param name="year">当前选择的年份 如2018</param>
+            <param name="month">当前选择的月份 如01</param>
+            <param name="day">当前选择的日 如11</param>
+            <param name="userid">当前医生ID</param>
+            <param name="clientId">当前诊所ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.GetSystemWeek(System.Int64,System.Int64)">
+            <summary>
+            获取用户【周模板】接诊设置 ,周一至周日
+            </summary>
+            <param name="userid">当前医生ID</param>
+            <param name="clientId">当前诊所ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.GetOrderView(System.Int64,System.Int64)">
+            <summary>
+            获取预约单详情
+            </summary>
+            <param name="userid">当前登录医生ID</param>
+            <param name="orderid">当前订单ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.SaveState(HPYL.Model.PostDateState)">
+            <summary>
+            修改【日期】接诊状态(针对某年某月某日的设置)
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.SaveDateNum(HPYL.Model.PostDateTime)">
+            <summary>
+            修改【日期】排班接诊数量(针对某年某月某日的设置)
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.SaveWeekNum(HPYL.Model.PostWeekNum)">
+            <summary>
+            修改【周模板】接诊数量 （针对周一至周日的设置）
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.SaveWeekState(HPYL.Model.PostWeekState)">
+            <summary>
+            修改【周模板】接诊状态 （针对周一至周日的设置）
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.InOrder(HPYL.Model.OrderModel)">
+            <summary>
+            添加预约单
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.CancelOrder(HPYL.Model.InfoToUser)">
+            <summary>
+            取消预约单
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
         <member name="T:HPYL_API.Controllers.DoctorAdvice.DoctorAdviceController">
             <summary>
             医嘱计划
@@ -696,13 +802,20 @@
             <param name="ClinicId">诊所ID</param>
             <returns></returns>
         </member>
-        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.FollowTypeList(System.Int64,System.Int64,System.Int64)">
+        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.FollowTypeSecondList(System.Int64,System.Int64,System.Int64)">
             <summary>
             获取诊疗项目2级分类
             </summary>
             <param name="ClinicId">诊所ID</param>
             <param name="UID">当前登录用户ID</param>
             <param name="ParentId">父类ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.InFollowPlan(HPYL.Model.ProjectPost)">
+            <summary>
+            添加诊疗项目
+            </summary>
+            <param name="info"></param>
             <returns></returns>
         </member>
         <member name="T:HPYL_API.Controllers.QuickReply.QuickReplyController">
@@ -756,6 +869,24 @@
             </summary>
             <param name="info"></param>
             <returns></returns>
+        </member>
+        <member name="F:HPYL_API.WebForm1.form1">
+            <summary>
+            form1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
+        </member>
+        <member name="F:HPYL_API.WebForm1.Button1">
+            <summary>
+            Button1 控件。
+            </summary>
+            <remarks>
+            自动生成的字段。
+            若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+            </remarks>
         </member>
     </members>
 </doc>
