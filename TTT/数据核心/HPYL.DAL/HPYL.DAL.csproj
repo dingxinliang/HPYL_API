@@ -48,16 +48,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agreement\AgreementDAL.cs" />
+    <Compile Include="ArticleCategories\ArticleCategoriesDAL.cs" />
+    <Compile Include="Articles\ArticlesDAL.cs" />
     <Compile Include="Calendar\CalendarDAL.cs" />
     <Compile Include="Calendar\OrderService.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="DoctorAdvice\DoctorAdviceDAL.cs" />
     <Compile Include="FollowPlan\FollowPlanDAL.cs" />
+    <Compile Include="Members\MembersDAL.cs" />
     <Compile Include="MysqlTest.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickReply\QuickReplyDAL.cs" />
+    <Compile Include="RecruitPlan\RecruitPlanDAL.cs" />
     <Compile Include="Referral\ReferralDAL.cs" />
-    <Compile Include="User\UserDAL.cs" />
+    <Compile Include="Shopbranch\ShopbranchDAL.cs" />
+    <Compile Include="Shopcategories\ShopcategoriesDAL.cs" />
+    <Compile Include="Shops\ShopsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\基础设施\HPYL.Common\HPYL.Common.csproj">
@@ -73,6 +82,40 @@
       <Name>DBUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\Dapper.dll" />
+    <Content Include="bin\Debug\Dapper.xml" />
+    <Content Include="bin\Debug\DBUtility.dll" />
+    <Content Include="bin\Debug\DBUtility.pdb" />
+    <Content Include="bin\Debug\HPYL.Common.dll" />
+    <Content Include="bin\Debug\HPYL.Common.pdb" />
+    <Content Include="bin\Debug\HPYL.DAL.dll" />
+    <Content Include="bin\Debug\HPYL.DAL.pdb" />
+    <Content Include="bin\Debug\HPYL.Model.dll" />
+    <Content Include="bin\Debug\HPYL.Model.pdb" />
+    <Content Include="bin\Debug\HPYL.Model.xml" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\SQLinq.Dapper.dll" />
+    <Content Include="bin\Debug\SQLinq.dll" />
+    <Content Include="bin\Debug\XL.Util.Extension.dll" />
+    <Content Include="bin\Debug\XL.Util.WebControl.dll" />
+    <Content Include="obj\Debug\HPYL.DAL.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HPYL.DAL.dll" />
+    <Content Include="obj\Debug\HPYL.DAL.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\HPYL.DAL.csproj.CopyComplete" />
+    <None Include="obj\Debug\HPYL.DAL.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\HPYL.DAL.csprojAssemblyReference.cache" />
+    <None Include="obj\Release\HPYL.DAL.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\HPYL.DAL.csprojAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
