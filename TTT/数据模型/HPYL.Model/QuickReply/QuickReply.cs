@@ -29,7 +29,9 @@ using System.Threading.Tasks;
 namespace HPYL.Model
 {
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class BaseQuickReply
     {  /// <summary>
        /// 快捷回复内容(必填)

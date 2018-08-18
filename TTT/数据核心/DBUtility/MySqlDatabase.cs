@@ -199,16 +199,16 @@ namespace Maticsoft.DBUtility
                 {
                     if (orderField.ToUpper().IndexOf("ASC") + orderField.ToUpper().IndexOf("DESC") > 0)
                     {
-                        OrderBy = "Order By " + orderField;
+                        OrderBy = "  Order By " + orderField;
                     }
                     else
                     {
-                        OrderBy = "Order By " + orderField + " " + (isAsc ? "ASC" : "DESC");
+                        OrderBy = "  Order By " + orderField + " " + (isAsc ? "ASC" : "DESC");
                     }
                 }
                 else
                 {
-                    OrderBy = "order by (select 0)";
+                    OrderBy = "  order by (select 0)";
                 }
                 sb.Append("Select * From (Select ROW_NUMBER() Over (" + OrderBy + ")");
                 sb.Append(" As rowNum, * From (" + strSql + ") As T ) As N Where rowNum > " + num + " And rowNum <= " + num1 + "");
@@ -253,20 +253,20 @@ namespace Maticsoft.DBUtility
                 {
                     if (orderField.ToUpper().IndexOf("ASC") + orderField.ToUpper().IndexOf("DESC") > 0)
                     {
-                        OrderBy = "Order By " + orderField;
+                        OrderBy = "  Order By " + orderField;
                     }
                     else
                     {
-                        OrderBy = "Order By " + orderField + " " + (isAsc ? "ASC" : "DESC");
+                        OrderBy = "  Order By " + orderField + " " + (isAsc ? "ASC" : "DESC");
                     }
                 }
                 else
                 {
-                    OrderBy = "order by (select 0)";
+                    OrderBy = "  order by (select 0)";
                 }
                 sb.Append(strSql + OrderBy);
-                sb.Append(" limit " + num + "," + pageSize + "");
-                total = Convert.ToInt32(DbHelperMySQL.GetSingle("Select Count(1) From (" + strSql + ") As t", MySqlParameter));
+                sb.Append("  limit " + num + "," + pageSize + "");
+                total = Convert.ToInt32(DbHelperMySQL.GetSingle(" Select Count(1) From (" + strSql + ") As t", MySqlParameter));
                 var IDataReader = DbHelperMySQL.ExecuteReader(sb.ToString(), MySqlParameter);
                 DataTable resultTable = ConvertExtension.IDataReaderToDataTable(IDataReader);
                 

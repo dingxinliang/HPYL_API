@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 
 namespace HPYL.Model
 {
-
-
     public class BaseFollowPlan {
 
         /// <summary>
