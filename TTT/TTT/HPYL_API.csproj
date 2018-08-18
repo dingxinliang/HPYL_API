@@ -212,13 +212,22 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Agreement\AgreementController.cs" />
+    <Compile Include="Controllers\ArticleCategories\ArticleCategoriesController.cs" />
+    <Compile Include="Controllers\Articles\ArticlesController.cs" />
     <Compile Include="Controllers\CalendarDate\CalendarController.cs" />
     <Compile Include="Controllers\DoctorAdvice\DoctorAdviceController.cs" />
     <Compile Include="Controllers\FollowPlan\FollowPlanController.cs" />
     <Compile Include="Controllers\FollowType\FollowTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Members\MembersController.cs" />
     <Compile Include="Controllers\QuickReply\QuickReplyController.cs" />
+    <Compile Include="Controllers\RecruitPlan\RecruitPlanController.cs" />
     <Compile Include="Controllers\Referral\ReferralController.cs" />
+    <Compile Include="Controllers\Shopbranch\ShopbranchController.cs" />
+    <Compile Include="Controllers\Shopcategories\ShopcategoriesController.cs" />
+    <Compile Include="Controllers\Shops\ShopsController.cs" />
+    <Compile Include="Controllers\SMS\SMSController.cs" />
     <Compile Include="Controllers\TestAController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
