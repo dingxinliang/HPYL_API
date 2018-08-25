@@ -597,6 +597,64 @@
             </summary>
             <param name="documentPath">The physical path to XML document.</param>
         </member>
+        <member name="T:HPYL_API.Controllers.AgreementController">
+            <summary>
+            协议控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.AgreementController.Getagmt(System.String,System.String,System.String)">
+            <summary>
+            获取协议
+            </summary>
+            <param name="AgID">医生登录服务协议 AgID=1 诊所入住协议 AgID=2 关于我们 AgID=4</param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.ArticleCategoriesController">
+            <summary>
+            资讯分类控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.ArticleCategoriesController.List(System.String,System.String,System.String)">
+            <summary>
+            资讯分类列表
+            </summary>
+            <param name="NewsClass">1	患者知识 2	职称分类 3 专业分类 4 年限分类</param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ArticleCategoriesController.Detail(System.String,System.String,System.String)">
+            <summary>
+            分类详情
+            </summary>
+            <param name="ClassId"></param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.ArticlesController">
+            <summary>
+            新闻控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.ArticlesController.List(System.String,System.Int32,System.Int32)">
+            <summary>
+            资讯列表
+            </summary>
+            <param name="NewsClass"></param>
+            <param name="page"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ArticlesController.Detail(System.String)">
+            <summary>
+            新闻详情
+            </summary>
+            <param name="NewsId"></param>
+            <returns></returns>
+        </member>
         <member name="T:HPYL_API.Controllers.CalendarController">
             <summary>
             日程
@@ -818,6 +876,50 @@
             <param name="info"></param>
             <returns></returns>
         </member>
+        <member name="T:HPYL_API.Controllers.MembersController">
+            <summary>
+            用户控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.MembersController.ExistsUser(System.String,System.String,System.String)">
+            <summary>
+            帐号是否存在
+            </summary>
+            <param name="UserName"></param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.MembersController.MembersLogin(HPYL.Model.LoginMembers)">
+            <summary>
+            用户登陆
+            </summary>
+            <param name="obj">RoleId 0未审核 1已通过 2已注销 3 患者身份</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.MembersController.Register(HPYL.Model.MRegister)">
+            <summary>
+            申请成为医生
+            </summary>
+            <param name="obj"></param>
+            <returns>Result 1 成功  2失败</returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.MembersController.GetMemberCard(System.String,System.String,System.String)">
+            <summary>
+            我的名片
+            </summary>
+            <param name="UserId">用户ID</param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.MembersController.AddPatient(HPYL.Model.MPatient)">
+            <summary>
+            新建患者
+            </summary>
+            <param name="obj"></param>
+            <returns>Result 0 失败 1 成功  2手机号存在</returns>
+        </member>
         <member name="T:HPYL_API.Controllers.QuickReply.QuickReplyController">
             <summary>
             快捷回复
@@ -858,6 +960,20 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:HPYL_API.Controllers.RecruitPlan.RecruitPlanController">
+            <summary>
+            申请医生协议控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.RecruitPlan.RecruitPlanController.RecruitPlanContent(System.String,System.String,System.String)">
+            <summary>
+            申请医生协议 
+            </summary>
+            <param name="Id">参考值 id=2</param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
         <member name="T:HPYL_API.Controllers.Referral.ReferralController">
             <summary>
             转诊
@@ -868,6 +984,90 @@
             新增转诊
             </summary>
             <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.ShopbranchController">
+            <summary>
+            医生控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopbranchController.List(System.String,System.String,System.String)">
+            <summary>
+            获取数据列表
+            </summary>
+            <param name="Where"></param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopbranchController.Detail(System.String,System.String,System.String)">
+            <summary>
+            单个数据详情
+            </summary>
+            <param name="Ids"></param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.ShopcategoriesController">
+            <summary>
+            诊所分类控制器
+            </summary>
+        </member>
+        <member name="T:HPYL_API.Controllers.ShopsController">
+            <summary>
+            诊所控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopsController.List(System.String,System.String,System.String)">
+            <summary>
+            获取数据列表
+            </summary>
+            <param name="Where"></param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopsController.Detail(System.String,System.String,System.String)">
+            <summary>
+            单个数据详情
+            </summary>
+            <param name="Ids"></param>
+            <param name="Sign"></param>
+            <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HPYL_API.Controllers.SMSController">
+            <summary>
+            短信控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.SMSController.Send(HPYL.Model.SMS.MSMS)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="obj">'login'</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.SMSController.SendCode(HPYL.Model.SMS.MSMS)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="obj">phone(手机号),sigin:短信标示如（login、pwd）</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.SMSController.SendLogin(HPYL.Model.SMS.MSMS)">
+            <summary>
+            动态登录获取验证码
+            </summary>
+            <param name="obj">参数：Phone</param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.SMSController.CodeValidate(HPYL.Model.SMS.MSMS)">
+            <summary>
+             验证码验证
+            </summary>
+            <param name="obj">参数：Phone,code,sigin标示</param>
             <returns></returns>
         </member>
         <member name="F:HPYL_API.WebForm1.form1">

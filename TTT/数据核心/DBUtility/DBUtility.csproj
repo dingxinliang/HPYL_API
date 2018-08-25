@@ -78,12 +78,45 @@
     <Compile Include="DESEncrypt.cs" />
     <Compile Include="Extension\ConvertExtension.cs" />
     <Compile Include="MySqlDatabase.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PubConstant.cs" />
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="obj\Debug\DBUtility.csproj.CopyComplete" />
+    <None Include="obj\Debug\DBUtility.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\DBUtility.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\DBUtility.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\DBUtility.csprojAssemblyReference.cache" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Dapper.dll" />
+    <Content Include="bin\Debug\Dapper.xml" />
+    <Content Include="bin\Debug\DBUtility.dll" />
+    <Content Include="bin\Debug\DBUtility.pdb" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.Entity.EF6.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\SQLinq.Dapper.dll" />
+    <Content Include="bin\Debug\SQLinq.dll" />
+    <Content Include="bin\Debug\XL.Util.dll" />
+    <Content Include="bin\Debug\XL.Util.Extension.dll" />
+    <Content Include="bin\Debug\XL.Util.WebControl.dll" />
+    <Content Include="obj\Debug\DBUtility.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\DBUtility.dll" />
+    <Content Include="obj\Debug\DBUtility.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,8 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HPYL.Model">
+      <HintPath>..\..\数据模型\HPYL.Model\bin\Debug\HPYL.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,9 +50,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ComHelper.cs" />
     <Compile Include="DateHelper.cs" />
     <Compile Include="EnumHelper.cs" />
+    <Compile Include="FileUpload.cs" />
+    <Compile Include="JsonHelper.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\HPYL.Common.dll" />
+    <Content Include="bin\Debug\HPYL.Common.pdb" />
+    <Content Include="obj\Debug\HPYL.Common.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\HPYL.Common.dll" />
+    <Content Include="obj\Debug\HPYL.Common.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\HPYL.Common.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\HPYL.Common.csprojAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
