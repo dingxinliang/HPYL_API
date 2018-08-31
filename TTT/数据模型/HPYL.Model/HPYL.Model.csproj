@@ -76,7 +76,9 @@
     <Compile Include="Referral\Referrallog.cs" />
     <Compile Include="Shopbranch\Shopbranch.cs" />
     <Compile Include="Shopcategories\Shopcategories.cs" />
+    <Compile Include="Shops\MultipointShops.cs" />
     <Compile Include="Shops\Shops.cs" />
+    <Compile Include="Shops\ShopsList.cs" />
     <Compile Include="SMS\MSMS.cs" />
     <Compile Include="SMS\ShortMessage.cs" />
   </ItemGroup>

@@ -111,6 +111,8 @@ namespace HPYL_API.Controllers
         public CallBackResult Register([FromBody]MRegister obj)
         {
             CallBackResult apiResult = new CallBackResult();
+            apiResult.Result = 2;
+            apiResult.Message = "申请失败";
             //检查请求 签名和时间戳不符合即返回
             if (!C.ComHelper.CheckRequest(obj, out apiResult.Result, out apiResult.Message))
             {
@@ -123,11 +125,6 @@ namespace HPYL_API.Controllers
             {
                 apiResult.Result = 1;
                 apiResult.Message = "申请成功!";
-            }
-            else
-            {
-                apiResult.Result = 2;
-                apiResult.Message = "申请失败";
             }
             return apiResult;
         }

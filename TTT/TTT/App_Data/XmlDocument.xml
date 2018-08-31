@@ -965,13 +965,11 @@
             申请医生协议控制器
             </summary>
         </member>
-        <member name="M:HPYL_API.Controllers.RecruitPlan.RecruitPlanController.RecruitPlanContent(System.String,System.String,System.String)">
+        <member name="M:HPYL_API.Controllers.RecruitPlan.RecruitPlanController.RecruitPlanContent(System.String)">
             <summary>
             申请医生协议 
             </summary>
             <param name="Id">参考值 id=2</param>
-            <param name="Sign"></param>
-            <param name="Ts"></param>
             <returns></returns>
         </member>
         <member name="T:HPYL_API.Controllers.Referral.ReferralController">
@@ -1035,6 +1033,26 @@
             <param name="Ids"></param>
             <param name="Sign"></param>
             <param name="Ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopsController.GetMultipointShosList(System.String)">
+            <summary>
+            获取多点执业
+            </summary>
+            <param name="CompanyRegionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopsController.GetMultipointShosDetl(System.String)">
+            <summary>
+            获取多点执业详情
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HPYL_API.Controllers.ShopsController.GetListReg">
+            <summary>
+            获取诊疗列表（名称+标识）
+            </summary>
             <returns></returns>
         </member>
         <member name="T:HPYL_API.Controllers.SMSController">

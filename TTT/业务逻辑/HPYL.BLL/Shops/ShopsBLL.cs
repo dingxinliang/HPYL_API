@@ -13,12 +13,38 @@ namespace HPYL.BLL
     public class ShopsBLL
     {
         private readonly HPYL.DAL.ShopsDAL dal = new HPYL.DAL.ShopsDAL();
-      
+
         #region  BasicMethod
         /// <summary>
-        /// 是否存在该记录
+        /// 获取单一诊疗字段
         /// </summary>
-        public bool Exists(long Id)
+        /// <returns></returns>
+        public List<HPYL.Model.ShopsList> GetListReg()
+        {
+            return dal.GetListReg();
+        }
+        /// <summary>
+        /// 获取多点执业
+        /// </summary>
+        /// <param name="CompanyRegionId"></param>
+        /// <returns></returns>
+        public List<HPYL.Model.MultipointShops> GetMultipointShos(long CompanyRegionId)
+        {
+            return dal.GetMultipointShos(CompanyRegionId);
+        }
+        /// <summary>
+        /// 获取单个多点执业
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public HPYL.Model.MultipointShops GetMultipointShosDetl(long Id)
+        {
+            return dal.GetMultipointShosDetl(Id);
+        }
+            /// <summary>
+            /// 是否存在该记录
+            /// </summary>
+            public bool Exists(long Id)
         {
             return dal.Exists(Id);
         }
@@ -156,8 +182,10 @@ namespace HPYL.BLL
         //}
 
         #endregion  BasicMethod
-        #region  ExtensionMethod
+       
+        
+        
+ 
 
-        #endregion  ExtensionMethod
-    }
+        }
 }

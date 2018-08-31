@@ -9,6 +9,7 @@ using System.Web.Http;
 using XL.Model.Message;
 using C = HPYL.Common;
 using B = HPYL.BLL;
+using XL.Application.Code;
 
 namespace HPYL_API.Controllers
 {
@@ -80,6 +81,89 @@ namespace HPYL_API.Controllers
                 apiResult.Message = "加载失败!";
             }
 
+            return apiResult;
+        }
+       /// <summary>
+       /// 获取多点执业
+       /// </summary>
+       /// <param name="CompanyRegionId"></param>
+       /// <returns></returns>
+        [HttpGet]
+        public CallBackResult GetMultipointShosList(string CompanyRegionId)
+        {
+            CallBackResult apiResult = new CallBackResult();
+            apiResult.Result = 2;
+            apiResult.Message = "无数据!";
+            try
+            {
+                B.ShopsBLL bll = new B.ShopsBLL();
+                List<HPYL.Model.MultipointShops> mlist = bll.GetMultipointShos(long.Parse(CompanyRegionId));
+                apiResult.Data = mlist;
+                if (apiResult.Data != null && mlist.Count > 0)
+                {
+                    apiResult.Result = 1;
+                    apiResult.Message = "加载成功!";
+                }
+            }
+            catch (Exception ex)
+            {
+                new CCBException("获取多点执业", ex);
+            }
+            return apiResult;
+        }
+        /// <summary>
+        /// 获取多点执业详情
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public CallBackResult GetMultipointShosDetl(string Id)
+        {
+            CallBackResult apiResult = new CallBackResult();
+            apiResult.Result = 2;
+            apiResult.Message = "无数据!";
+            try
+            {
+                B.ShopsBLL bll = new B.ShopsBLL();
+                HPYL.Model.MultipointShops mlist = bll.GetMultipointShosDetl(long.Parse(Id));
+                apiResult.Data = mlist;
+                if (apiResult.Data != null)
+                {
+                    apiResult.Result = 1;
+                    apiResult.Message = "加载成功!";
+                }
+            }
+            catch (Exception ex)
+            {
+                new CCBException("获取多点执业详情", ex);
+            }
+            return apiResult;
+        }
+        /// <summary>
+        /// 获取诊疗列表（名称+标识）
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public CallBackResult GetListReg()
+        {
+            CallBackResult apiResult = new CallBackResult();
+            apiResult.Result = 2;
+            apiResult.Message = "无数据!";
+            try
+            {
+                B.ShopsBLL bll = new B.ShopsBLL();
+                List<HPYL.Model.ShopsList> mlist = bll.GetListReg();
+                apiResult.Data = mlist;
+                if (apiResult.Data != null && mlist.Count > 0)
+                {
+                    apiResult.Result = 1;
+                    apiResult.Message = "加载成功!";
+                }
+            }
+            catch (Exception ex)
+            {
+                new CCBException("获取诊疗列表（名称+标识）", ex);
+            }
             return apiResult;
         }
     }
