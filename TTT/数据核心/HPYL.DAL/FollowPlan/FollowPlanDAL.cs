@@ -420,6 +420,10 @@ namespace HPYL.DAL
 
                 //写入sku
                 sql += ";INSERT INTO himall_skus (`Id`, `ProductId`, `Color`, `Size`, `Version`, `Sku`, `Stock`, `CostPrice`, `SalePrice`, `ShowPic`, `SafeStock`) VALUES ('"+ Convert.ToInt32(obj) + "_0_0_0',  '"+ Convert.ToInt32(obj) + "', NULL, NULL, NULL, NULL, '100000000', '0.00', '"+ Basemole.MinSalePrice+ "', NULL, '0')";
+                //写入详情
+                sql += ";INSERT INTO himall_productdescriptions (`ProductId`,`AuditReason`,`Description`,`DescriptionPrefixId`,`DescriptiondSuffixId`,`Meta_Title`,`Meta_Description`,`Meta_Keywords`,`MobileDescription`)VALUES" +
+                    " ( '" + Convert.ToInt32(obj) + "',NULL, '111', '0', '0', NULL, NULL, NULL, '222'); ";
+
                 DbHelperMySQL.ExecuteSql(sql);
                 return true;
             }

@@ -379,7 +379,9 @@
     <Content Include="Configs\ioc.config" />
     <Content Include="Configs\log4net.config" />
     <Content Include="Configs\redis.config" />
-    <Content Include="Configs\system.config" />
+    <Content Include="Configs\system.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
     <Content Include="bin\ApplicationInsights.config" />
     <Content Include="bin\HPYL_API.dll.config" />
@@ -445,6 +447,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\APItest.cshtml" />
     <Content Include="TTT.zip" />
+    <Content Include="Scripts\region.json" />
+    <Content Include="Scripts\regionbak.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

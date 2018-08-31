@@ -68,6 +68,11 @@ namespace HPYL.BLL
             return dal.SaveDateNum(info);
         }
 
+        public Adderess ShopAddress(long clientId)
+        {
+            return dal.ShopAddress(clientId);
+        }
+
         public bool SaveWeekNum(PostWeekNum info)
         {
             return dal.SaveWeekNum(info);

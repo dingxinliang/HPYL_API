@@ -55,6 +55,32 @@ namespace HPYL_API.Controllers
         }
 
         /// <summary>
+        /// 获取诊所地址
+        /// </summary>
+        /// <param name="clientId">诊所ID</param>
+        /// <returns></returns>
+        [HttpGet]
+        public CallBackResult ShopAddress(long clientId = 0)
+        {
+            CallBackResult apiResult = new CallBackResult();
+            try
+            {
+                var data = FBLL.ShopAddress(clientId);
+                apiResult.Data = data;
+                apiResult.Result = 1;
+                apiResult.Message = "加载成功";
+
+            }
+            catch (Exception ex)
+            {
+                apiResult.Result = 0;
+                apiResult.Message = "加载失败";
+                new CCBException("获取诊所地址:", ex);
+            }
+            return apiResult;
+
+        }
+        /// <summary>
         /// 获取选择日期预约时间段的统计情况 
         /// </summary>
         /// <param name="year">当前选择的年份 如2018</param>

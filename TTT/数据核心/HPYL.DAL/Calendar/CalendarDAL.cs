@@ -35,6 +35,15 @@ namespace HPYL.DAL
     public class CalendarDAL
     {
         #region 获取日程
+
+        public Adderess ShopAddress(long shopid)
+        {
+            Adderess addmodel = new Adderess();
+            string sql = "select CompanyRegionId from himall_shops where Id="+shopid+"";
+            addmodel.addresId = int.Parse(DbHelperMySQL.GetSingle(sql).ToString());
+            addmodel.address = new RegionService().GetFullName((long)addmodel.addresId);
+            return addmodel;
+        }
         public List<BaseCalendar> GetCalendarList(int year, int month, long userid, long shopid)
         {
             DateHelper date = new DateHelper();
