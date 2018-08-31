@@ -31,9 +31,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Himall.Core, Version=2.8.6817.18681, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Himall.Service">
+      <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.Service.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\TTT\bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +68,7 @@
     <Compile Include="Articles\ArticlesDAL.cs" />
     <Compile Include="Calendar\CalendarDAL.cs" />
     <Compile Include="Calendar\OrderService.cs" />
+    <Compile Include="CityService.cs" />
     <Compile Include="DoctorAdvice\DoctorAdviceDAL.cs" />
     <Compile Include="FollowPlan\FollowPlanDAL.cs" />
     <Compile Include="Members\MembersDAL.cs" />
@@ -67,20 +83,6 @@
     <Compile Include="Shopbranch\ShopbranchDAL.cs" />
     <Compile Include="Shopcategories\ShopcategoriesDAL.cs" />
     <Compile Include="Shops\ShopsDAL.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\基础设施\HPYL.Common\HPYL.Common.csproj">
-      <Project>{62527462-7990-4dc4-9e07-ccd155598002}</Project>
-      <Name>HPYL.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\数据模型\HPYL.Model\HPYL.Model.csproj">
-      <Project>{471d6ce3-9a20-4765-8830-99f6aca4c548}</Project>
-      <Name>HPYL.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
-      <Project>{5c70d89a-85ff-404c-9536-bfeeab3e7fd2}</Project>
-      <Name>DBUtility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Dapper.dll" />
@@ -116,6 +118,20 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\基础设施\HPYL.Common\HPYL.Common.csproj">
+      <Project>{62527462-7990-4dc4-9e07-ccd155598002}</Project>
+      <Name>HPYL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\数据模型\HPYL.Model\HPYL.Model.csproj">
+      <Project>{471d6ce3-9a20-4765-8830-99f6aca4c548}</Project>
+      <Name>HPYL.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBUtility\DBUtility.csproj">
+      <Project>{5c70d89a-85ff-404c-9536-bfeeab3e7fd2}</Project>
+      <Name>DBUtility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

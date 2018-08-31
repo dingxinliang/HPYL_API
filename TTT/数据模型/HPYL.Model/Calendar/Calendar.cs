@@ -27,6 +27,12 @@ using System.Threading.Tasks;
 namespace HPYL.Model
 {
 
+    public class Adderess {
+
+        public string address { get; set; }
+        public int addresId { get; set; }
+    }
+
     /// <summary>
     /// 日历
     /// </summary>

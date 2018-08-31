@@ -670,6 +670,13 @@
             <param name="clientId">当前诊所ID</param>
             <returns></returns>
         </member>
+        <member name="M:HPYL_API.Controllers.CalendarController.ShopAddress(System.Int64)">
+            <summary>
+            获取诊所地址
+            </summary>
+            <param name="clientId">诊所ID</param>
+            <returns></returns>
+        </member>
         <member name="M:HPYL_API.Controllers.CalendarController.GetDayTimeList(System.Int32,System.Int32,System.Int32,System.Int64,System.Int64)">
             <summary>
             获取选择日期预约时间段的统计情况 
@@ -869,7 +876,7 @@
             <param name="ParentId">父类ID</param>
             <returns></returns>
         </member>
-        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.InFollowPlan(HPYL.Model.ProjectPost)">
+        <member name="M:HPYL_API.Controllers.FollowType.FollowTypeController.InFollowProject(HPYL.Model.ProjectPost)">
             <summary>
             添加诊疗项目
             </summary>

@@ -64,16 +64,6 @@
     <Compile Include="Shops\ShopsBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\数据核心\HPYL.DAL\HPYL.DAL.csproj">
-      <Project>{01820217-719d-420e-9710-2435ff0456af}</Project>
-      <Name>HPYL.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\数据模型\HPYL.Model\HPYL.Model.csproj">
-      <Project>{471d6ce3-9a20-4765-8830-99f6aca4c548}</Project>
-      <Name>HPYL.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="bin\Debug\Dapper.dll" />
     <Content Include="bin\Debug\Dapper.xml" />
     <Content Include="bin\Debug\DBUtility.dll" />
@@ -108,6 +98,16 @@
   <ItemGroup>
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\数据核心\HPYL.DAL\HPYL.DAL.csproj">
+      <Project>{01820217-719d-420e-9710-2435ff0456af}</Project>
+      <Name>HPYL.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\数据模型\HPYL.Model\HPYL.Model.csproj">
+      <Project>{471d6ce3-9a20-4765-8830-99f6aca4c548}</Project>
+      <Name>HPYL.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

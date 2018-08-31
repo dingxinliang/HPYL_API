@@ -161,7 +161,7 @@ namespace HPYL_API.Controllers.FollowType
         /// <returns></returns>
         [HttpPost]
         [ValidateModel]
-        public CallBackResult InFollowPlan(ProjectPost info)
+        public CallBackResult InFollowProject(ProjectPost info)
         {
             CallBackResult apiResult = new CallBackResult();
             try
