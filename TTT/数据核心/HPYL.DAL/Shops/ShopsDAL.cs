@@ -1,4 +1,5 @@
-﻿using Maticsoft.DBUtility;
+﻿using Himall.IServices;
+using Maticsoft.DBUtility;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -179,7 +180,7 @@ namespace HPYL.DAL
             }
         }
         /// <summary>
-        /// 更新一条数据
+        /// 更新一条数据  
         /// </summary>
         public bool Update(HPYL.Model.Shops model)
         {
@@ -442,8 +443,8 @@ namespace HPYL.DAL
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select Id,GradeId,ShopName,Logo,SubDomains,Theme,IsSelf,ShopStatus,RefuseReason,CreateDate,EndDate,CompanyName,CompanyRegionId,CompanyAddress,CompanyPhone,CompanyEmployeeCount,CompanyRegisteredCapital,ContactsName,ContactsPhone,ContactsEmail,BusinessLicenceNumber,BusinessLicenceNumberPhoto,BusinessLicenceRegionId,BusinessLicenceStart,BusinessLicenceEnd,BusinessSphere,OrganizationCode,OrganizationCodePhoto,GeneralTaxpayerPhot,BankAccountName,BankAccountNumber,BankName,BankCode,BankRegionId,BankPhoto,TaxRegistrationCertificate,TaxpayerId,TaxRegistrationCertificatePhoto,PayPhoto,PayRemark,SenderName,SenderAddress,SenderPhone,Freight,FreeFreight,Stage,SenderRegionId,BusinessLicenseCert,ProductCert,OtherCert,legalPerson,CompanyFoundingDate,BusinessType,IDCard,IDCardUrl,IDCardUrl2,WeiXinNickName,WeiXinSex,WeiXinAddress,WeiXinTrueName,WeiXinOpenId,WeiXinImg,AutoAllotOrder,ProvideInvoice from himall_shops ");
-            strSql.Append(" where Id ="+Id);
-         
+            strSql.Append(" where Id =" + Id);
+
             HPYL.Model.Shops model = new HPYL.Model.Shops();
             DataSet ds = DbHelperMySQL.Query(strSql.ToString());
             if (ds.Tables[0].Rows.Count > 0)
@@ -493,7 +494,7 @@ namespace HPYL.DAL
                 {
                     try
                     {
-                    model.IsSelf = int.Parse(row["IsSelf"].ToString());
+                        model.IsSelf = int.Parse(row["IsSelf"].ToString());
                     }
                     catch (Exception)
                     {
@@ -523,8 +524,8 @@ namespace HPYL.DAL
                 {
                     model.CompanyRegionId = int.Parse(row["CompanyRegionId"].ToString());
                 }
-                   if (row["CompanyAddress"] != null)
-                 {
+                if (row["CompanyAddress"] != null)
+                {
                     model.CompanyAddress = row["CompanyAddress"].ToString();
                 }
                 if (row["CompanyPhone"] != null)
@@ -745,7 +746,36 @@ namespace HPYL.DAL
             }
             return DbHelperMySQL.Query(strSql.ToString());
         }
-
+        /// <summary>
+        /// 单一诊所列表
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <returns></returns>
+        public List<HPYL.Model.ShopsList> GetListReg()
+        {
+            List<HPYL.Model.ShopsList> modellist = new List<Model.ShopsList>();
+            HPYL.Model.ShopsList model = new Model.ShopsList();
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append(" select hs.Id,hs.ShopName ");
+            strSql.Append(" from himall_shops hs ");
+            strSql.Append(" inner join himall_managers hm on hm.ShopId = hs.Id and hm.RoleId = 0 ");
+            strSql.Append(" where hs.ShopStatus = 7 ");
+            strSql.Append("  order by hs.Id DESC ");
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString());
+            if (ds.Tables.Count > 0)
+            {
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow drData in ds.Tables[0].Rows)
+                    {
+                        model = new Model.ShopsList();
+                        model.Id = Convert.ToInt64(drData.IsNull("Id") ? 0 : drData["Id"]);
+                        model.ShopName = Convert.ToString(drData.IsNull("ShopName") ? 0 : drData["ShopName"]);
+                    }
+                }
+            }
+            return modellist;
+        }
         /// <summary>
         /// 获取记录总数
         /// </summary>
@@ -818,9 +848,88 @@ namespace HPYL.DAL
 			return DbHelperMySQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-        #endregion  BasicMethod
-        #region  ExtensionMethod
+    
+       
+        //private const string REGION_FILE_PATH = "/Scripts/region.json";
+        //private const string REGION_BAK_PATH = "/Scripts/regionbak.json";
+        /// <summary>
+        /// 多点执业
+        /// </summary>
+        /// <param name="CompanyRegionId"></param>
+        /// <returns></returns>
+        public List<HPYL.Model.MultipointShops> GetMultipointShos(long CompanyRegionId)
+        {
+            HPYL.Model.MultipointShops model = new Model.MultipointShops();
+            List<HPYL.Model.MultipointShops> modelList = new List<Model.MultipointShops>();
+           // var regionService = Himall.ServiceProvider.Instance<IRegionService>.Create;
 
-        #endregion  ExtensionMethod
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.CompanyRegionId,hs.CompanyAddress,hm.Remark from himall_shops hs ");
+            strSql.Append(" inner join himall_managers hm on hm.ShopId = hs.Id and hm.RoleId = 0 ");
+            strSql.Append(" where hs.ShopStatus = 7 and CompanyRegionId = @CompanyRegionId");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("@CompanyRegionId", MySqlDbType.Int64,20)};
+            parameters[0].Value = CompanyRegionId;
+            DataSet ds= DbHelperMySQL.Query(strSql.ToString(), parameters);
+            if (ds.Tables.Count > 0)
+            {
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow drData in ds.Tables[0].Rows)
+                    {
+                        model = new Model.MultipointShops();
+                        model.Id = Convert.ToInt64(drData.IsNull("Id") ? 0 : drData["Id"]);
+                        model.Logo = Convert.ToString(drData.IsNull("Logo") ? 0 : drData["Logo"]);
+                        model.ShopName = Convert.ToString(drData.IsNull("ShopName") ? 0 : drData["ShopName"]);
+                        model.RegionFullName = Convert.ToString(drData.IsNull("CompanyRegionId") ? 0 : drData["CompanyRegionId"]);
+                        //model.RegionFullName = regionService.GetFullName(long.Parse(row["CompanyRegionId"].ToString()));
+                        model.CompanyAddress = Convert.ToString(drData.IsNull("CompanyAddress") ? 0 : drData["CompanyAddress"]);
+                        model.Remark = Convert.ToString(drData.IsNull("Remark") ? 0 : drData["Remark"]);
+                        // model.Remark= regionService.GetRegionPath(long.Parse(row["CompanyRegionId"].ToString()));
+                        modelList.Add(model);
+
+                    }
+                }
+            }
+            return modelList;
+        }
+        /// <summary>
+        /// 单个诊所详情
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public HPYL.Model.MultipointShops GetMultipointShosDetl(long Id)
+        {
+            HPYL.Model.MultipointShops model = new Model.MultipointShops();
+           
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.CompanyRegionId,hs.CompanyAddress,hm.Remark from himall_shops hs ");
+            strSql.Append(" inner join himall_managers hm on hm.ShopId = hs.Id and hm.RoleId = 0 ");
+            strSql.Append(" where hs.ShopStatus = 7 and hs.id = @Id");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("@Id", MySqlDbType.Int64,20)};
+            parameters[0].Value = Id;
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
+            if (ds.Tables.Count > 0)
+            {
+                if (ds != null && ds.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow drData in ds.Tables[0].Rows)
+                    {
+                        model.Id = Convert.ToInt64(drData.IsNull("Id") ? 0 : drData["Id"]);
+                        model.Logo = Convert.ToString(drData.IsNull("Logo") ? 0 : drData["Logo"]);
+                        model.ShopName = Convert.ToString(drData.IsNull("ShopName") ? 0 : drData["ShopName"]);
+                        model.RegionFullName = Convert.ToString(drData.IsNull("CompanyRegionId") ? 0 : drData["CompanyRegionId"]);
+                        //model.RegionFullName = regionService.GetFullName(long.Parse(row["CompanyRegionId"].ToString()));
+                        model.CompanyAddress = Convert.ToString(drData.IsNull("CompanyAddress") ? 0 : drData["CompanyAddress"]);
+                        model.Remark = Convert.ToString(drData.IsNull("Remark") ? 0 : drData["Remark"]);
+                        // model.Remark= regionService.GetRegionPath(long.Parse(row["CompanyRegionId"].ToString()));
+                       
+                    }
+                }
+            }
+            return model;
+        }
+        #endregion  BasicMethod
     }
 }

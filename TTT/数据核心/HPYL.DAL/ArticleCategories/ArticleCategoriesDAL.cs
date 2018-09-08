@@ -23,17 +23,17 @@ namespace HPYL.DAL.ArticleCategories
         public HPYL.Model.ArticleCategories GetModel(long Id)
         {
 
-            //StringBuilder strSql = new StringBuilder();
-            //strSql.Append("select Id,ParentCategoryId,Name,DisplaySequence,IsDefault from himall_articlecategories ");
-            //strSql.Append(" where Id=@Id");
-            //MySqlParameter[] parameters = {
-            //        new MySqlParameter("@Id", MySqlDbType.Int64)
-            //};
-            //parameters[0].Value = Id;
-            string sql = "select Id,ParentCategoryId,Name,DisplaySequence,IsDefault from himall_articlecategories  where Id="+Id;
-            HPYL.Model.ArticleCategories model = new HPYL.Model.ArticleCategories();
-            // DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
-            DataSet ds = DbHelperMySQL.Query(sql.ToString());
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select Id,ParentCategoryId,Name,DisplaySequence,IsDefault from himall_articlecategories ");
+            strSql.Append(" where Id=@Id");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("@Id", MySqlDbType.Int64)
+            };
+            parameters[0].Value = Id;
+            // string sql = "select Id,ParentCategoryId,Name,DisplaySequence,IsDefault from himall_articlecategories  where Id="+Id;
+            // HPYL.Model.ArticleCategories model = new HPYL.Model.ArticleCategories();
+             DataSet ds = DbHelperMySQL.Query(strSql.ToString(), parameters);
+           // DataSet ds = DbHelperMySQL.Query(sql.ToString());
             if (ds.Tables[0].Rows.Count > 0)
             {
                 return DataRowToModel(ds.Tables[0].Rows[0]);

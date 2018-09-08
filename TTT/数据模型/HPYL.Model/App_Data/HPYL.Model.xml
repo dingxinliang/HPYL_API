@@ -1833,6 +1833,41 @@
             创建者 0 系统 否则为用户ID
             </summary>
         </member>
+        <member name="T:HPYL.Model.MultipointShops">
+            <summary>
+            多点执业模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MultipointShops.Id">
+            <summary>
+            标识id
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MultipointShops.Logo">
+            <summary>
+            店铺logo
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MultipointShops.ShopName">
+            <summary>
+            店铺名称
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MultipointShops.RegionFullName">
+            <summary>
+            区域完整路径
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MultipointShops.CompanyAddress">
+            <summary>
+            详细地址
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MultipointShops.Remark">
+            <summary>
+            简介
+            </summary>
+        </member>
         <member name="T:HPYL.Model.Shops">
             <summary>
              shops:店铺表
@@ -2156,6 +2191,21 @@
         <member name="P:HPYL.Model.Shops.ProvideInvoice">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.ShopsList">
+            <summary>
+            获取诊所列表模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ShopsList.Id">
+            <summary>
+            标识ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ShopsList.ShopName">
+            <summary>
+            诊所名称
             </summary>
         </member>
         <member name="T:HPYL.Model.SMS.MSMS">

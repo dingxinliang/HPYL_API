@@ -21,17 +21,13 @@ namespace HPYL_API.Controllers.RecruitPlan
         /// 申请医生协议 
         /// </summary>
         /// <param name="Id">参考值 id=2</param>
-        /// <param name="Sign"></param>
-        /// <param name="Ts"></param>
         /// <returns></returns>
         [HttpGet]
-        public CallBackResult RecruitPlanContent(string Id, string Sign, string Ts)
+        public CallBackResult RecruitPlanContent(string Id)
         {
             CallBackResult apiResult = new CallBackResult();
-            if (!C.ComHelper.CheckRequest(Sign, Ts, out apiResult.Result, out apiResult.Message))
-            {
-                return apiResult;
-            }
+            apiResult.Result = 2;
+            apiResult.Message = "加载失败!";
             B.RecruitPlanBLL bll = new B.RecruitPlanBLL();
             HPYL.Model.RecruitPlan model = bll.GetModel(long .Parse(Id));
             apiResult.Data = model;
@@ -41,12 +37,6 @@ namespace HPYL_API.Controllers.RecruitPlan
                 apiResult.Message = "加载成功!";
 
             }
-            else
-            {
-                apiResult.Result = 2;
-                apiResult.Message = "加载失败!";
-            }
-
             return apiResult;
         }
     }

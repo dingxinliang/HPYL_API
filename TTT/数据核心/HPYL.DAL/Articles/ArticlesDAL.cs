@@ -69,7 +69,11 @@ namespace HPYL.DAL
                 {
                     model.IconUrl = row["IconUrl"].ToString();
                 }
-                //model.Content=row["Content"].ToString();
+                if (row["Content"] != null && row["Content"].ToString() != "")
+                {
+                    model.Content = row["Content"].ToString();
+                }
+                
                 if (row["AddDate"] != null && row["AddDate"].ToString() != "")
                 {
                     model.AddDate = DateTime.Parse(row["AddDate"].ToString());
