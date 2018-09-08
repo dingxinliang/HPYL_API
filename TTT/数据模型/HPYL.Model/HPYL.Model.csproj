@@ -66,6 +66,9 @@
     <Compile Include="Members\MPatient.cs" />
     <Compile Include="Members\MRegister.cs" />
     <Compile Include="MysqlTest.cs" />
+    <Compile Include="Order\orderitems.cs" />
+    <Compile Include="Order\orders.cs" />
+    <Compile Include="Order\OrdersList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pub\InfoToUser.cs" />
     <Compile Include="QuickReply\QuickReply.cs" />
@@ -81,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\HPYL.Model.xml" />
+    <Content Include="bin\Debug\HPYL.Model.dll" />
+    <Content Include="bin\Debug\HPYL.Model.pdb" />
+    <Content Include="bin\Debug\HPYL.Model.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
