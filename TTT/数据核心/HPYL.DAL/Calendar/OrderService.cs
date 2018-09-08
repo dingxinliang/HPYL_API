@@ -162,6 +162,7 @@ namespace HPYL.DAL
             if (DbHelperMySQL.ExecuteSql(strSql.ToString(), parameters) > 0)
             {
                 decimal OrderTotal = 0;//订单总额
+                decimal ratetotal = 0;//佣金总金额
                 string sqlp = "select Id,ProductName Name,MinSalePrice Price from Himall_Products  where Id in(" + info.ProjectIdList.Replace("，", ",").TrimEnd(',') + ") ";
                 var ProductList = new Repository<ProductItem>().FindList(sqlp).ToList();
                 if (ProductList.Count() > 0)
@@ -176,11 +177,13 @@ namespace HPYL.DAL
                         pmode.SalePrice = item.Price;
                         pmode.SkuId = "" + item.Id + "_0_0_0";
                         pmode.RealTotalPrice = pmode.SalePrice * 1;
+                        pmode.DistributionRate = Rate(item.Id);//获取分佣比例
                         OrderTotal += pmode.RealTotalPrice;
+                        ratetotal += Math.Round((pmode.DistributionRate * (pmode.RealTotalPrice - pmode.CouponDiscount - pmode.FullDiscount)) / 100, 2, MidpointRounding.AwayFromZero);  
                         AddProduct(pmode);
                     }
                 }
-                UPorderPrice(Orderno, OrderTotal, info.DoctorId, info.ClientId);
+                UPorderPrice(Orderno, OrderTotal, ratetotal, info.DoctorId, info.ClientId);
                 return true;
             }
             else {
@@ -190,6 +193,18 @@ namespace HPYL.DAL
             
         }
 
+        public decimal Rate(long  id)
+        {
+            string sql = "select Rate from himall_productbrokerage where ProductId="+id+"";
+            var d = DbHelperMySQL.GetSingle(sql);
+            if (d != null)
+            {
+                return decimal.Parse(d.ToString());
+            }
+            else {
+                return 0;
+            }
+        }
         /// <summary>
         /// 获取订单信息
         /// </summary>
@@ -272,10 +287,10 @@ namespace HPYL.DAL
         /// <param name="ClientId"></param>
         /// <param name="ybl">佣金比例</param>
         /// <returns></returns>
-        public bool UPorderPrice(long OrderId, decimal Price, long userId, long ClientId)
+        public bool UPorderPrice(long OrderId, decimal Price,decimal ratetotal, long userId, long ClientId)
         {
             decimal ybl = commisFloat(userId, ClientId);
-            string sqls = "update himall_orders set ProductTotalAmount=" + Price + ",CommisTotalAmount=" + (Price * ybl) + " where ShareUserId=" + userId + " and SHopId=" + ClientId + " and Id=" + OrderId + "";
+            string sqls = "update himall_orders set ProductTotalAmount=" + Price + ",CommisTotalAmount=" + ratetotal + " where ShareUserId=" + userId + " and SHopId=" + ClientId + " and Id=" + OrderId + "";
             if (DbHelperMySQL.ExecuteSql(sqls) > 0)
             {
                 return true;
