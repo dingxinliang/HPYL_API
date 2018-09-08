@@ -152,7 +152,7 @@ namespace HPYL.Model
 
             this.CouponDiscount =0;
             this.DiscountAmount =0;
-            this.DistributionRate =0;
+            //this.DistributionRate =0;
             this.EnabledRefundAmount = 0;
             this.EnabledRefundIntegral =0;
             this.FullDiscount =0;

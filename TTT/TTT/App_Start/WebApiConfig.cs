@@ -6,6 +6,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using HPYL_API.App_Start.Attribute;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
 
 namespace HPYL_API
 {
@@ -15,6 +16,12 @@ namespace HPYL_API
         {
             // Web API 配置和服务
             var jsonFormatter = new JsonMediaTypeFormatter();
+            var settings = jsonFormatter.SerializerSettings;
+            var timeConverter = new IsoDateTimeConverter { DateTimeFormat = "yyyy-MM-dd HH:mm:ss" };
+            settings.Converters.Add(timeConverter);
+            settings.NullValueHandling = NullValueHandling.Ignore;
+            config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
+
             config.Services.Replace(typeof(IContentNegotiator), new JsonContentNegotiator(jsonFormatter));
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             // Web API 路由
