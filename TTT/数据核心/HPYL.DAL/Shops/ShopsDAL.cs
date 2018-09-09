@@ -864,9 +864,9 @@ namespace HPYL.DAL
            // var regionService = Himall.ServiceProvider.Instance<IRegionService>.Create;
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.CompanyRegionId,hs.CompanyAddress,hm.Remark from himall_shops hs ");
+            strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.AddressName,hs.CompanyAddress,hm.Remark from himall_shops hs ");
             strSql.Append(" inner join himall_managers hm on hm.ShopId = hs.Id and hm.RoleId = 0 ");
-            strSql.Append(" where hs.ShopStatus = 7 and CompanyRegionId = @CompanyRegionId");
+            strSql.Append(" where hs.ShopStatus = 7 and AddressPath like '%@CompanyRegionId,%'");
             MySqlParameter[] parameters = {
                     new MySqlParameter("@CompanyRegionId", MySqlDbType.Int64,20)};
             parameters[0].Value = CompanyRegionId;
@@ -881,11 +881,9 @@ namespace HPYL.DAL
                         model.Id = Convert.ToInt64(drData.IsNull("Id") ? 0 : drData["Id"]);
                         model.Logo = Convert.ToString(drData.IsNull("Logo") ? 0 : drData["Logo"]);
                         model.ShopName = Convert.ToString(drData.IsNull("ShopName") ? 0 : drData["ShopName"]);
-                        model.RegionFullName = Convert.ToString(drData.IsNull("CompanyRegionId") ? 0 : drData["CompanyRegionId"]);
-                        //model.RegionFullName = regionService.GetFullName(long.Parse(row["CompanyRegionId"].ToString()));
+                        model.RegionFullName = Convert.ToString(drData.IsNull("AddressName") ? 0 : drData["AddressName"]);
                         model.CompanyAddress = Convert.ToString(drData.IsNull("CompanyAddress") ? 0 : drData["CompanyAddress"]);
                         model.Remark = Convert.ToString(drData.IsNull("Remark") ? 0 : drData["Remark"]);
-                        // model.Remark= regionService.GetRegionPath(long.Parse(row["CompanyRegionId"].ToString()));
                         modelList.Add(model);
 
                     }
@@ -903,7 +901,7 @@ namespace HPYL.DAL
             HPYL.Model.MultipointShops model = new Model.MultipointShops();
            
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.CompanyRegionId,hs.CompanyAddress,hm.Remark from himall_shops hs ");
+            strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.AddressName,hs.CompanyAddress,hm.Remark from himall_shops hs ");
             strSql.Append(" inner join himall_managers hm on hm.ShopId = hs.Id and hm.RoleId = 0 ");
             strSql.Append(" where hs.ShopStatus = 7 and hs.id = @Id");
             MySqlParameter[] parameters = {
@@ -919,7 +917,7 @@ namespace HPYL.DAL
                         model.Id = Convert.ToInt64(drData.IsNull("Id") ? 0 : drData["Id"]);
                         model.Logo = Convert.ToString(drData.IsNull("Logo") ? 0 : drData["Logo"]);
                         model.ShopName = Convert.ToString(drData.IsNull("ShopName") ? 0 : drData["ShopName"]);
-                        model.RegionFullName = Convert.ToString(drData.IsNull("CompanyRegionId") ? 0 : drData["CompanyRegionId"]);
+                        model.RegionFullName = Convert.ToString(drData.IsNull("AddressName") ? 0 : drData["AddressName"]);
                         //model.RegionFullName = regionService.GetFullName(long.Parse(row["CompanyRegionId"].ToString()));
                         model.CompanyAddress = Convert.ToString(drData.IsNull("CompanyAddress") ? 0 : drData["CompanyAddress"]);
                         model.Remark = Convert.ToString(drData.IsNull("Remark") ? 0 : drData["Remark"]);

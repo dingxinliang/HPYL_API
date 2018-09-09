@@ -228,6 +228,7 @@
     <Compile Include="Controllers\FollowType\FollowTypeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Members\MembersController.cs" />
+    <Compile Include="Controllers\Orders\OrdersController.cs" />
     <Compile Include="Controllers\QuickReply\QuickReplyController.cs" />
     <Compile Include="Controllers\RecruitPlan\RecruitPlanController.cs" />
     <Compile Include="Controllers\Referral\ReferralController.cs" />

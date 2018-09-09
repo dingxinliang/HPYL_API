@@ -927,6 +927,20 @@
             <param name="obj"></param>
             <returns>Result 0 失败 1 成功  2手机号存在</returns>
         </member>
+        <member name="T:HPYL_API.Controllers.OrdersController">
+            <summary>
+            订单控制器
+            </summary>
+        </member>
+        <member name="M:HPYL_API.Controllers.OrdersController.List(System.String,System.Int32,System.Int32)">
+            <summary>
+            列表
+            </summary>
+            <param name="strWhere"></param>
+            <param name="page"></param>
+            <param name="pagesize"></param>
+            <returns></returns>
+        </member>
         <member name="T:HPYL_API.Controllers.QuickReply.QuickReplyController">
             <summary>
             快捷回复

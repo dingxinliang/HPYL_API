@@ -1553,6 +1553,751 @@
             
             </summary>
         </member>
+        <member name="P:HPYL.Model.orderitems.Id">
+            <summary>
+            auto_increment
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.OrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.ShopId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.ProductId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.SkuId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.SKU">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.Quantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.ReturnQuantity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.CostPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.SalePrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.DiscountAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.RealTotalPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.RefundPrice">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.ProductName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.Color">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.Size">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.Version">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.ThumbnailsUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.CommisRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.EnabledRefundAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.IsLimitBuy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.DistributionRate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.EnabledRefundIntegral">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.CouponDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orderitems.FullDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.orders">
+            <summary>
+            orders:实体类(属性说明自动提取数据库字段的描述信息)
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.OrderStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.OrderDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.CloseReason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShopId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShopName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.SellerPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.SellerAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.SellerRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.SellerRemarkFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.UserRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShipTo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.CellPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.TopRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.RegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.RegionFullName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ReceiveLongitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ReceiveLatitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ExpressCompanyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.Freight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShipOrderNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShippingDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.IsPrinted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.PaymentTypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.PaymentTypeGateway">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.PaymentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.GatewayOrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.PayRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.PayDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.InvoiceType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.InvoiceTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.InvoiceCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.Tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.FinishDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ProductTotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.RefundTotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.CommisTotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.RefundCommisAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ActiveType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.Platform">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.DiscountAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.IntegralDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.InvoiceContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.OrderType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShareUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.OrderRemarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.LastModifyTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.DeliveryType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ShopBranchId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.PickupCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.TotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ActualPayAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.FullDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.CapitalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.RemindType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ReceiveDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ReceiveStartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.orders.ReceiveEndTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.OrderStatus">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.OrderDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.CloseReason">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShopId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShopName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.SellerPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.SellerAddress">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.SellerRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.SellerRemarkFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.UserName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.UserRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShipTo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.CellPhone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.TopRegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.RegionId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.RegionFullName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.Address">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ReceiveLongitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ReceiveLatitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ExpressCompanyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.Freight">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShipOrderNumber">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShippingDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.IsPrinted">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.PaymentTypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.PaymentTypeGateway">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.PaymentType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.GatewayOrderId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.PayRemark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.PayDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.InvoiceType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.InvoiceTitle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.InvoiceCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.Tax">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.FinishDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ProductTotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.RefundTotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.CommisTotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.RefundCommisAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ActiveType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.Platform">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.DiscountAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.IntegralDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.InvoiceContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.OrderType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShareUserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.OrderRemarks">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.LastModifyTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.DeliveryType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ShopBranchId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.PickupCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.TotalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ActualPayAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.FullDiscount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.CapitalAmount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.RemindType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ReceiveDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ReceiveStartTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.ReceiveEndTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.OrdersList.orderitems">
+            <summary>
+            订单详情
+            </summary>
+        </member>
         <member name="T:HPYL.Model.InfoToUser">
             <summary>
             用户信息操作类 如查询 删除
