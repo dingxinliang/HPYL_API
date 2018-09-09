@@ -35,7 +35,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Himall.Service">
+    <Reference Include="Himall.IServices, Version=2.8.6824.29807, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.IServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Himall.Service, Version=2.8.6824.29813, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.Service.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

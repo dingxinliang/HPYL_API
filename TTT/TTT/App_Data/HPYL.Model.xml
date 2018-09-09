@@ -2193,6 +2193,21 @@
             
             </summary>
         </member>
+        <member name="T:HPYL.Model.ShopsList">
+            <summary>
+            获取诊所列表模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ShopsList.Id">
+            <summary>
+            标识ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.ShopsList.ShopName">
+            <summary>
+            诊所名称
+            </summary>
+        </member>
         <member name="T:HPYL.Model.SMS.MSMS">
             <summary>
             发送短信模型
