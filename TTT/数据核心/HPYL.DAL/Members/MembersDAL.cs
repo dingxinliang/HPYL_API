@@ -701,6 +701,8 @@ namespace HPYL.DAL
                             rows = DbHelperMySQL.ExecuteSql(strSqlM.ToString());
                             if (rows > 0)
                             {
+                                //初始化医生日程数据
+                                new CalendarDAL().InitialiseCalendatr(model.UserId,model.ShopUserId);
                                 result = true;
                             }
                         }
@@ -727,7 +729,7 @@ namespace HPYL.DAL
                 strsql.Append("select a.Photo UserPhoto,s.ShopName,a.RealName UserName,ft.HFT_Name ShopCategorName,ag.`Name` JodName from himall_members a  ");
                 strsql.Append(" left join hpyl_memberotherinfo b on b.UserId = a.Id ");
                 strsql.Append(" left join himall_shops s on s.Id = b.ShopUserId ");
-                strsql.Append(" left join hpyl_followtype ft on ft.HFT_ID = b.ShopCategorId ");
+                strsql.Append(" left join himall_shopcategories ft on ft.Id = b.ShopCategorId ");
                 strsql.Append(" left join himall_articlecategories ag on ag.Id = b.JodId ");
                 strsql.Append(" where a.Id ="+userid);
                 DataSet ds = DbHelperMySQL.Query(strsql.ToString());
