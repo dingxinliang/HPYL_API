@@ -225,6 +225,17 @@ namespace HPYL.BLL
         {
             return dal.GetMemberCard(userid);
         }
-            #endregion
+        #endregion
+        #region 医生关联患者
+        /// <summary>
+        /// 医生关联患者
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public Model.MDoctorPlist GetDoctorPlist(long Id)
+        {
+            return dal.GetDoctorPlist(Id);
         }
+        #endregion
+    }
 }

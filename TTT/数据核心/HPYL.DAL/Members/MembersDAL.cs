@@ -5,6 +5,7 @@ using MySql.Data.MySqlClient;
 using Maticsoft.DBUtility;//Please add references
 using M=HPYL.Model;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace HPYL.DAL
 {
@@ -492,8 +493,14 @@ namespace HPYL.DAL
         /// <returns></returns>
         public int AddPhoneMsg(string strPhone, string code, string contents, string sigin)
         {
-            string sql = "insert into hpyl_phonemessage(P_Phone,P_Content,P_SendTime,P_State,P_Code,P_Sign) values('"+ strPhone + "','"+contents+"','"+DateTime.Now+"','1','"+code+"','"+sigin+"')";
-            return DbHelperMySQL.ExecuteSql(sql);
+            int res = 0;
+            Regex dReg = new Regex("[0-9]{11,11}");
+            if (dReg.IsMatch(strPhone))
+            {
+                string sql = "insert into hpyl_phonemessage(P_Phone,P_Content,P_SendTime,P_State,P_Code,P_Sign) values('" + strPhone + "','" + contents + "','" + DateTime.Now + "','1','" + code + "','" + sigin + "')";
+                res= DbHelperMySQL.ExecuteSql(sql);
+            }
+            return res;
         }
 
         /// <summary>
@@ -554,6 +561,17 @@ namespace HPYL.DAL
                                 model.RoleId = long.Parse(dsre.Tables[0].Rows[0][1].ToString());//医生身份
                             }
                         }
+                        //诊所ID
+                        string sqlcid = "select ShopUserId from hpyl_memberotherinfo where UserId=" + model.UserId.ToString();
+                        DataSet dscid = DbHelperMySQL.Query(sqlcid);
+                        if (dscid != null)
+                        {
+                          
+                            if (dscid.Tables[0].Rows.Count != 0)
+                            {
+                                model.ClientId = long.Parse(dscid.Tables[0].Rows[0][0].ToString());//诊所ID
+                            }
+                        }
                     }
                 }
             }
@@ -586,6 +604,17 @@ namespace HPYL.DAL
                     DbHelperMySQL.ExecuteSql(strSqlts.ToString());
                     model.UserId = GetUserID(phone);
                     model.RoleId = 3;
+                    //诊所ID
+                    string sqlcid = "select ShopUserId from hpyl_memberotherinfo where UserId=" + GetUserID(phone);
+                    DataSet dscid = DbHelperMySQL.Query(sqlcid);
+                    if (dscid != null)
+                    {
+
+                        if (dscid.Tables[0].Rows.Count != 0)
+                        {
+                            model.ClientId = long.Parse(dscid.Tables[0].Rows[0][0].ToString());//诊所ID
+                        }
+                    }
                 }
                 else
                 {
@@ -829,23 +858,65 @@ namespace HPYL.DAL
 
         public int CodeValidate(string phone, string code, string singn)
         {
-            if (code == "1111")
-            {
-                return 1;
-            }
-            else
-            {
+            
             string sqlone = @" select P_SendTime from hpyl_phonemessage where DATEDIFF(n,P_SendTime,GETDATE())<30 and P_Phone=@P_Phone and P_Code=@P_Code and P_Sign=@P_Sign and P_State='1'";
             MySqlParameter[] sqlonepara = new MySqlParameter[] {
                          new MySqlParameter("@P_Phone",phone),
                          new MySqlParameter("@P_Code",code),
                          new MySqlParameter("@P_Sign",singn)
                         };
-            int count = DbHelperMySQL.Query(sqlone, sqlonepara).Tables[0].Rows.Count;
+            return DbHelperMySQL.Query(sqlone, sqlonepara).Tables[0].Rows.Count;
 
-            return count;
-           }
+           
+          
         }
         #endregion
+        #region  医生关联患者
+        /// <summary>
+        /// 医生ID
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public M.MDoctorPlist GetDoctorPlist(long Id)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select hb.Id,hb.Photo,hb.RealName from hpyl_memberrelation hm inner join himall_members hb on hb.Id=hm.OneLevelUserID where hm.TwoLevelUserID=@Id");
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("@Id", MySqlDbType.Int64,20)         };
+            parameters[0].Value = Id;
+            DataSet ds = DbHelperMySQL.Query(strSql.ToString());
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                return DataRowToDoctorPlist(ds.Tables[0].Rows[0]);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public M.MDoctorPlist DataRowToDoctorPlist(DataRow row)
+        {
+            M.MDoctorPlist model = new M.MDoctorPlist();
+            if (row != null)
+            {
+                if (row["Id"] != null && row["Id"].ToString() != "")
+                {
+                    model.Id = long.Parse(row["Id"].ToString());
+                }
+                if (row["Photo"] != null)
+                {
+                    model.Photo = row["Photo"].ToString();
+                }
+                if (row["RealName"] != null)
+                {
+                    model.RealName = row["RealName"].ToString();
+                }
+
+            }
+            return model;
+        }
+
+        #endregion
+
     }
 }

@@ -7,22 +7,21 @@ using System.Threading.Tasks;
 namespace HPYL.Model
 {
     /// <summary>
-    /// 登录验证 返回模型
+    /// 医生 关联患者模型
     /// </summary>
-    public class MLoginMember
+    public  class MDoctorPlist
     {
         /// <summary>
-        /// 用户ID
+        /// 标识ID
         /// </summary>
-        public long UserId { get; set; }
-
+        public long Id { get; set; }
         /// <summary>
-        /// 用户角色 0 患者 1 医生 2 医生未审核角色
+        /// 头像
         /// </summary>
-        public long RoleId { get; set; }
+        public string Photo { get; set; }
         /// <summary>
-        /// 诊所ID
+        /// 真实姓名
         /// </summary>
-        public long ClientId { get; set; }
+        public string RealName { get; set; }
     }
 }

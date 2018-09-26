@@ -82,6 +82,7 @@
     <Compile Include="FollowPlan\FollowType.cs" />
     <Compile Include="FollowPlan\ProjectPost.cs" />
     <Compile Include="Members\LoginMembers.cs" />
+    <Compile Include="Members\MDoctorPlist.cs" />
     <Compile Include="Members\MemberCard.cs" />
     <Compile Include="Members\Members.cs" />
     <Compile Include="Members\MLoginMember.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Shops\Shops.cs" />
     <Compile Include="Shops\ShopsList.cs" />
     <Compile Include="SMS\MSMS.cs" />
+    <Compile Include="SMS\SendLoingModel.cs" />
     <Compile Include="SMS\ShortMessage.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -12,10 +12,10 @@ namespace HPYL.Common
 {
     public class SMS
     {
-        public static readonly string MessageAddress = "http://dx.ipyy.net/sms.aspx";
-        public static readonly string MessageAccount = "帐号";
-        public static readonly string MessagePwd = "密码";
-        public static readonly string Messagesign= "签名";
+        public static readonly string MessageAddress = "http://api.mysubmail.com/message/send.xml";
+        public static readonly string Messageappid = "27329";
+        public static readonly string signature = "96863d9c92f2ba5bd577e8693e447bdc";
+
         private static HPYL.Model.SMS.ShortMessage SubmitMessageInfo(String url)
         {
             HttpWebRequest webrequest = (HttpWebRequest)HttpWebRequest.Create(MessageAddress);
@@ -41,11 +41,11 @@ namespace HPYL.Common
             }
             else
             {
-                model_ShortMessage.Returnstatus = xmlDoc.GetElementsByTagName("returnstatus").Item(0).InnerText.ToString();
-                model_ShortMessage.Message = xmlDoc.GetElementsByTagName("message").Item(0).InnerText.ToString();
-                model_ShortMessage.Remainpoint = xmlDoc.GetElementsByTagName("remainpoint").Item(0).InnerText.ToString();
-                model_ShortMessage.TaskID = xmlDoc.GetElementsByTagName("taskID").Item(0).InnerText.ToString();
-                model_ShortMessage.SuccessCounts = xmlDoc.GetElementsByTagName("successCounts").Item(0).InnerText.ToString();
+                model_ShortMessage.Returnstatus = xmlDoc.GetElementsByTagName("status").Item(0).InnerText.ToString();
+                model_ShortMessage.Message = xmlDoc.GetElementsByTagName("send_id").Item(0).InnerText.ToString();
+               // model_ShortMessage.Remainpoint = xmlDoc.GetElementsByTagName("fee").Item(0).InnerText.ToString();
+                model_ShortMessage.TaskID = xmlDoc.GetElementsByTagName("sms_credits").Item(0).InnerText.ToString();
+                model_ShortMessage.SuccessCounts = xmlDoc.GetElementsByTagName("fee").Item(0).InnerText.ToString();
 
             }
             return model_ShortMessage;
@@ -69,6 +69,7 @@ namespace HPYL.Common
 
             return code;
         }
+      
         /// <summary>
         /// 发送动态密码
         /// </summary>
@@ -76,7 +77,7 @@ namespace HPYL.Common
         /// <param name="code"></param>
         /// <param name="contents"></param>
         /// <returns></returns>
-        public static bool Send(string strPhone, string code, string contents)
+        public static bool Send(string strPhone,string contents)
         {
             try
             {
@@ -85,8 +86,7 @@ namespace HPYL.Common
                 {
 
                     Encoding myEncoding = Encoding.GetEncoding("UTF-8");
-                    string strRegisterPhone = strPhone;
-                    string url = "action=send&userid=&account=" + HttpUtility.UrlEncode(MessageAccount, myEncoding) + "&password=" + HttpUtility.UrlEncode(MessagePwd, myEncoding) + "&mobile=" + HttpUtility.UrlEncode(strRegisterPhone, myEncoding) + "&content=" + HttpUtility.UrlEncode(contents.TrimEnd(' ') + "【"+ Messagesign + "】", myEncoding) + "&sendTime=&extno=";
+                    string url = "appid=" + HttpUtility.UrlEncode(Messageappid, myEncoding) + "&to=" + HttpUtility.UrlEncode(strPhone, myEncoding) +  "&content=" + HttpUtility.UrlEncode(contents, myEncoding) + "&signature=" + HttpUtility.UrlEncode(signature, myEncoding);
                     HPYL.Model.SMS.ShortMessage model_ShortMessage = SubmitMessageInfo(url);
                     //未获得返回值
                     if (model_ShortMessage == null)
@@ -96,7 +96,7 @@ namespace HPYL.Common
                     else
                     {
                         //返回值为成功
-                        if (model_ShortMessage.Returnstatus == "Success")
+                        if (model_ShortMessage.Returnstatus == "success")
                         {
                             return true;
                         }
@@ -118,46 +118,46 @@ namespace HPYL.Common
                 return false;
             }
         }
-        public static bool Send(string strPhone, string strMessage)
-        {
-            try
-            {
-                Regex dReg = new Regex("[0-9]{11,11}");
-                if (dReg.IsMatch(strPhone))
-                {
-                    Encoding myEncoding = Encoding.GetEncoding("UTF-8");
-                    string strRegisterPhone = strPhone;
-                    string url = "action=send&userid=&account=" + HttpUtility.UrlEncode(MessageAccount, myEncoding) + "&password=" + HttpUtility.UrlEncode(MessagePwd, myEncoding) + "&mobile=" + HttpUtility.UrlEncode(strRegisterPhone, myEncoding) + "&content=" + HttpUtility.UrlEncode(strMessage.TrimEnd(' ') + "【" + Messagesign + "】", myEncoding) + "&sendTime=&extno=";
-                    HPYL.Model.SMS.ShortMessage model_ShortMessage = SubmitMessageInfo(url);
-                    //未获得返回值
-                    if (model_ShortMessage == null)
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        //返回值为成功
-                        if (model_ShortMessage.Returnstatus == "Success")
-                        {
-                            return true;
-                        }
-                        //返回值为失败
-                        else
-                        {
-                            return false;
-                        }
-                    }
-                }
-                else
-                {
-                    return false;
-                }
+        //public static bool Send(string strPhone, string strMessage)
+        //{
+        //    try
+        //    {
+        //        Regex dReg = new Regex("[0-9]{11,11}");
+        //        if (dReg.IsMatch(strPhone))
+        //        {
+        //            Encoding myEncoding = Encoding.GetEncoding("UTF-8");
+        //            string strRegisterPhone = strPhone;
+        //            string url = "action=send&userid=&account=" + HttpUtility.UrlEncode(MessageAccount, myEncoding) + "&password=" + HttpUtility.UrlEncode(MessagePwd, myEncoding) + "&mobile=" + HttpUtility.UrlEncode(strRegisterPhone, myEncoding) + "&content=" + HttpUtility.UrlEncode(strMessage.TrimEnd(' ') + "【" + Messagesign + "】", myEncoding) + "&sendTime=&extno=";
+        //            HPYL.Model.SMS.ShortMessage model_ShortMessage = SubmitMessageInfo(url);
+        //            //未获得返回值
+        //            if (model_ShortMessage == null)
+        //            {
+        //                return false;
+        //            }
+        //            else
+        //            {
+        //                //返回值为成功
+        //                if (model_ShortMessage.Returnstatus == "Success")
+        //                {
+        //                    return true;
+        //                }
+        //                //返回值为失败
+        //                else
+        //                {
+        //                    return false;
+        //                }
+        //            }
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
 
-            }
-            catch //(Exception e)
-            {
-                return false;
-            }
-        }
+        //    }
+        //    catch //(Exception e)
+        //    {
+        //        return false;
+        //    }
+        //}
     }
 }

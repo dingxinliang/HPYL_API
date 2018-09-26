@@ -197,6 +197,38 @@ namespace HPYL_API.Controllers
             apiResult.Message = remsg;
             return apiResult;
         }
+        /// <summary>
+        /// 医生关联患者
+        /// </summary>
+        /// <param name="MemberId">医生ID</param>
+        /// <returns>Result 0 失败 1 成功  </returns>
+        [HttpGet]
+        public CallBackResult GetDoctorPlist(string MemberId)
+        {
+            CallBackResult apiResult = new CallBackResult();
+            apiResult.Result = 2;
+            apiResult.Message = "加载失败!";
+            try
+            {
+                B.Members bll = new B.Members();
+                M.MDoctorPlist model = new MDoctorPlist();
+                model = bll.GetDoctorPlist(long.Parse(MemberId));
+                if (model != null)
+                {
+                    apiResult.Data = model;
+                    apiResult.Result = 1;
+                    apiResult.Message = "加载成功!";
+
+                }
+            }
+            catch (Exception ex)
+            {
+                apiResult.Result = -3;
+                apiResult.Message = "服务器通信失败";
+                C.Log.Debug("医生关联患者", ex.Message);
+            }
+            return apiResult;
+        }
 
     }
 }

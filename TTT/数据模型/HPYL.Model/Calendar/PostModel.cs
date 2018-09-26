@@ -148,7 +148,7 @@ namespace HPYL.Model
         [StringLength(1, ErrorMessage = "字符长度应为一个字符")]
         public string Flag { get; set; }
         /// <summary>
-        /// 接诊患者数量（必填）
+        /// 状态只能是0或1（必填）
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "缺少state参数")]
         [Range(0, 1, ErrorMessage = "状态只能是0或1")]

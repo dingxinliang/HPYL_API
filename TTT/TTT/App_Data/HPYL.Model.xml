@@ -691,7 +691,7 @@
         </member>
         <member name="P:HPYL.Model.PostWeekState.State">
             <summary>
-            接诊患者数量（必填）
+            状态只能是0或1（必填）
             </summary>
         </member>
         <member name="P:HPYL.Model.HPYL_CalendarTime.HCW_ID">
@@ -1205,6 +1205,26 @@
             动态密码
             </summary>
         </member>
+        <member name="T:HPYL.Model.MDoctorPlist">
+            <summary>
+            医生 关联患者模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MDoctorPlist.Id">
+            <summary>
+            标识ID
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MDoctorPlist.Photo">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MDoctorPlist.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
         <member name="T:HPYL.Model.MemberCard">
             <summary>
             医生的名片
@@ -1399,6 +1419,11 @@
         <member name="P:HPYL.Model.MLoginMember.RoleId">
             <summary>
             用户角色 0 患者 1 医生 2 医生未审核角色
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.MLoginMember.ClientId">
+            <summary>
+            诊所ID
             </summary>
         </member>
         <member name="T:HPYL.Model.MPatient">
@@ -2974,6 +2999,21 @@
             </summary>
         </member>
         <member name="P:HPYL.Model.SMS.MSMS.sigin">
+            <summary>
+            发送类型
+            </summary>
+        </member>
+        <member name="T:HPYL.Model.SMS.SendLoingModel">
+            <summary>
+            发送短信模型
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.SendLoingModel.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:HPYL.Model.SMS.SendLoingModel.sigin">
             <summary>
             发送类型
             </summary>

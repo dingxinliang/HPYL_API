@@ -114,10 +114,10 @@ namespace HPYL_API.Controllers
         /// <summary>
         /// 获取多点执业详情
         /// </summary>
-        /// <param name="Id"></param>
+        /// <param name="ShopId"></param>
         /// <returns></returns>
         [HttpGet]
-        public CallBackResult GetMultipointShosDetl(string Id)
+        public CallBackResult GetMultipointShosDetl(string ShopId)
         {
             CallBackResult apiResult = new CallBackResult();
             apiResult.Result = 2;
@@ -125,7 +125,7 @@ namespace HPYL_API.Controllers
             try
             {
                 B.ShopsBLL bll = new B.ShopsBLL();
-                HPYL.Model.MultipointShops mlist = bll.GetMultipointShosDetl(long.Parse(Id));
+                HPYL.Model.MultipointShops mlist = bll.GetMultipointShosDetl(long.Parse(ShopId));
                 apiResult.Data = mlist;
                 if (apiResult.Data != null)
                 {

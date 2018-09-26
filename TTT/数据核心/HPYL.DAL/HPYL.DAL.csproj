@@ -124,6 +124,7 @@
     <Content Include="obj\Debug\HPYL.DAL.pdb" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\HPYL.DAL.csproj.CopyComplete" />
@@ -131,6 +132,7 @@
     <None Include="obj\Debug\HPYL.DAL.csprojAssemblyReference.cache" />
     <None Include="obj\Release\HPYL.DAL.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Release\HPYL.DAL.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />
