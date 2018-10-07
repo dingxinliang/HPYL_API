@@ -31,17 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Himall.Core, Version=2.8.6817.18681, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.Core.dll</HintPath>
+    <Reference Include="Himall.Core">
+      <HintPath>..\..\..\DLL\Himall.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Himall.IServices, Version=2.8.6824.29807, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.IServices.dll</HintPath>
+    <Reference Include="Himall.IServices">
+      <HintPath>..\..\..\DLL\Himall.IServices.dll</HintPath>
     </Reference>
-    <Reference Include="Himall.Service, Version=2.8.6824.29813, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HPYL_Web\himall2.8\DX0491-himall2.8\himall_v2.8\Himall.Web\bin\Himall.Service.dll</HintPath>
+    <Reference Include="Himall.ServiceProvider">
+      <HintPath>..\..\..\DLL\Himall.ServiceProvider.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
@@ -99,6 +96,8 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Order\orderitems.cs" />
+    <Compile Include="Order\orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickReply\QuickReplyDAL.cs" />
     <Compile Include="RecruitPlan\RecruitPlanDAL.cs" />

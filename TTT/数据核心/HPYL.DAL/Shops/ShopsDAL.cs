@@ -1,4 +1,4 @@
-﻿using Himall.IServices;
+﻿//using Himall.IServices;
 using Maticsoft.DBUtility;
 using MySql.Data.MySqlClient;
 using System;
@@ -866,11 +866,11 @@ namespace HPYL.DAL
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select hs.Id,hs.Logo,hs.ShopName,hs.AddressName,hs.CompanyAddress,hm.Remark from himall_shops hs ");
             strSql.Append(" inner join himall_managers hm on hm.ShopId = hs.Id and hm.RoleId = 0 ");
-            strSql.Append(" where hs.ShopStatus = 7 and AddressPath like '%@CompanyRegionId,%'");
-            MySqlParameter[] parameters = {
-                    new MySqlParameter("@CompanyRegionId", MySqlDbType.Int64,20)};
-            parameters[0].Value = CompanyRegionId;
-            DataSet ds= DbHelperMySQL.Query(strSql.ToString(), parameters);
+            strSql.Append(" where hs.ShopStatus = 7 and hs.AddressPath like '%"+ CompanyRegionId + ",%'");
+            //MySqlParameter[] parameters = {
+            //        new MySqlParameter("@CompanyRegionId", MySqlDbType.Int64,20)};
+            //parameters[0].Value = CompanyRegionId;
+            DataSet ds= DbHelperMySQL.Query(strSql.ToString());
             if (ds.Tables.Count > 0)
             {
                 if (ds != null && ds.Tables[0].Rows.Count > 0)

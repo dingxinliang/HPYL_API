@@ -546,11 +546,12 @@ namespace HPYL.DAL
                 if (ds != null)
                 {
                     //更新短信状态为已验证过
-                    DbHelperMySQL.ExecuteSql("update hpyl_phonemessage set P_State=2 where P_Phone='" + phone + "' and P_Sign='login'");
+                    DbHelperMySQL.ExecuteSql("update hpyl_phonemessage set P_State=2 where P_Phone='" + phone + "' and P_Code='" + code + "' and P_Sign='login'");
                     if (ds.Tables[0].Rows.Count != 0)
                     {
                         model.UserId = long.Parse(ds.Tables[0].Rows[0][0].ToString());
                         model.RoleId = 3;//患者身份
+                        model.ClientId = 0;//默认诊所ID
                         string sqlrel = "select Id,Status from himall_promoter where UserId=" + model.UserId.ToString();
                         DataSet dsre = DbHelperMySQL.Query(sqlrel);
                         if (dsre != null)
@@ -592,8 +593,8 @@ namespace HPYL.DAL
                     //添加用户其它信息关联表
                     StringBuilder strSqlot = new StringBuilder();
                     strSqlot.Append("insert into hpyl_MemberOtherInfo(");
-                    strSqlot.Append("UserId)");
-                    strSqlot.Append(" values ('" + GetUserID(phone) + "')");
+                    strSqlot.Append("UserId,ShopUserId)");
+                    strSqlot.Append(" values ('" + GetUserID(phone) + "',0)");
                     DbHelperMySQL.ExecuteSql(strSqlot.ToString());
 
                     //添加用户手机验证表
@@ -604,17 +605,18 @@ namespace HPYL.DAL
                     DbHelperMySQL.ExecuteSql(strSqlts.ToString());
                     model.UserId = GetUserID(phone);
                     model.RoleId = 3;
+                    model.ClientId = 0;//默认诊所ID
                     //诊所ID
-                    string sqlcid = "select ShopUserId from hpyl_memberotherinfo where UserId=" + GetUserID(phone);
-                    DataSet dscid = DbHelperMySQL.Query(sqlcid);
-                    if (dscid != null)
-                    {
+                    //string sqlcid = "select ShopUserId from hpyl_memberotherinfo where UserId=" + GetUserID(phone);
+                    //DataSet dscid = DbHelperMySQL.Query(sqlcid);
+                    //if (dscid != null)
+                    //{
 
-                        if (dscid.Tables[0].Rows.Count != 0)
-                        {
-                            model.ClientId = long.Parse(dscid.Tables[0].Rows[0][0].ToString());//诊所ID
-                        }
-                    }
+                    //    if (dscid.Tables[0].Rows.Count != 0)
+                    //    {
+                    //        model.ClientId = long.Parse(dscid.Tables[0].Rows[0][0].ToString());//诊所ID
+                    //    }
+                    //}
                 }
                 else
                 {
@@ -726,7 +728,7 @@ namespace HPYL.DAL
             if (Isexit)
             {   //判断是否发送验证码
                 StringBuilder strsql = new StringBuilder();
-                strsql.Append("select a.Photo UserPhoto,s.ShopName,a.RealName UserName,ft.HFT_Name ShopCategorName,ag.`Name` JodName from himall_members a  ");
+                strsql.Append("select a.Photo UserPhoto,s.ShopName,a.RealName UserName,ft.`Name` ShopCategorName,ag.`Name` JodName from himall_members a  ");
                 strsql.Append(" left join hpyl_memberotherinfo b on b.UserId = a.Id ");
                 strsql.Append(" left join himall_shops s on s.Id = b.ShopUserId ");
                 strsql.Append(" left join himall_shopcategories ft on ft.Id = b.ShopCategorId ");

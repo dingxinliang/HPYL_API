@@ -64,10 +64,13 @@ namespace HPYL_API.Controllers
                 {
                     return apiResult;
                 }
+                C.Log.Info("登录-LoginPhone", obj.LoginPhone);
+                C.Log.Info("登录-LoginPhone", obj.PhoneCode);
                 B.Members bll = new B.Members();
                 //验证验证码
                 if (bll.Checkcode(obj.LoginPhone, obj.PhoneCode, "login"))
                 {
+                    C.Log.Info("登录-验证码","通过");
                     MLoginMember loginM = bll.GetLoginPhoneCode(obj.LoginPhone, obj.PhoneCode);
                     if (loginM != null)
                     {
